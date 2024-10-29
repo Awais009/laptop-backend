@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 
@@ -26,7 +27,7 @@ class ProductController extends Controller
             ], 401);
         }
 
-        $products = Product::OrderByDesc('id')->get();
+        $products = Product::with('images')->OrderByDesc('id')->get();
         return response()->json([
             'success' => true,
             'message' => 'Products retrieved successfully',
@@ -57,6 +58,9 @@ class ProductController extends Controller
             'navigation_id' => 'required|exists:navigations,id',
             'navigation_item_id' => 'required|exists:navigation_items,id',
             'sub_category_id' => 'required|exists:sub_categories,id',
+            'images' => 'required',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'image_description' => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
@@ -80,6 +84,21 @@ class ProductController extends Controller
         $product->navigation_item_id = $request->input('navigation_item_id');
         $product->sub_category_id = $request->input('sub_category_id');
         $product->save();
+
+        // Upload image
+        if($images = $request->file('images')){
+        foreach ($images as $image){
+        $path = $image->store('productImage');
+        // Create product image
+        $productImage = new ProductImage();
+        $productImage->path = $path;
+        $productImage->description = $request->input('description');
+        $productImage->product_id = $product->id;
+        $productImage->save();
+        }
+
+        }
+
 
 
         return response()->json(['message' => 'Product created successfully'], 201);
@@ -116,6 +135,7 @@ class ProductController extends Controller
             'navigation_id' => 'sometimes|required|exists:navigations,id',
             'navigation_item_id' => 'sometimes|required|exists:navigation_items,id',
             'sub_category_id' => 'sometimes|required|exists:sub_categories,id',
+            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         if ($validator->fails()) {
@@ -131,6 +151,25 @@ class ProductController extends Controller
         $product->navigation_item_id = $request->input('navigation_item_id', $product->navigation_item_id);
         $product->sub_category_id = $request->input('sub_category_id', $product->sub_category_id);
         $product->save();
+
+
+        if($images = $request->file('images')){
+            foreach ($product->images as $prod_image){
+            if (Storage::exists($prod_image->path)) Storage::delete($prod_image->path);
+            $prod_image->delete();
+            }
+            foreach ($images as $image){
+                $path = $image->store('productImages');
+                // Create product image
+                $productImage = new ProductImage();
+                $productImage->path = $path;
+                $productImage->description = $request->input('description');
+                $productImage->product_id = $product->id;
+                $productImage->save();
+            }
+
+        }
+
 
         return response()->json(['message' => 'Product updated successfully'], 200);
     }

@@ -85,7 +85,7 @@ class UserAuthController extends Controller
      */
     public function logout(Request $request)
     {
-        $user = $request->user();
+        $user = Auth::user();
 
         if (!$user) {
             return response()->json(['error' => 'User not authenticated'], 401);
