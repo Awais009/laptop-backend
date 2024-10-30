@@ -13,6 +13,39 @@ use Illuminate\Support\Str;
 
 class ProductController extends Controller
 {
+
+    /**
+     * Create product
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function homeProduct(){
+
+        $products = Product::with('image')->whereHas('image')->OrderByDesc('id')->get();
+        return response()->json([
+            'success' => true,
+            'storagePath' => asset('storage/app/private'),
+            'message' => 'Products retrieved successfully',
+            'data' => $products
+        ], 200);
+    }
+
+    /**
+     * Create product
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function productDetail($SKU){
+
+        $product = Product::with('images')->where('SKU',$SKU)->first();
+        return response()->json([
+            'success' => true,
+            'storagePath' => asset('storage/app/private'),
+            'message' => 'Products retrieved successfully',
+            'data' => $product
+        ], 200);
+    }
+
     /**
      * Create product
      *

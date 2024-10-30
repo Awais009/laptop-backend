@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Navigation extends Model
 {
     use HasFactory;
+
+       public function products(){
+           return $this->hasMany(Product::class);
+       }
+    public function items(){
+        return $this->hasMany(NavigationItem::class);
+    }
 }
