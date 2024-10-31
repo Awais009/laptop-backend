@@ -70,9 +70,13 @@ class CartController extends Controller
             return response()->json(['message' => 'Unauthorized'], 401);
         }
 
-        $cartItems = Cart::where('user_id', $user->id)->get();
+        $cartItems = Cart::with('product.image')->where('user_id', $user->id)->get();
 
-        return response()->json(['message' => 'Cart items retrieved successfully', 'data' => $cartItems], 200);
+        return response()->json([
+            'message' => 'Cart items retrieved successfully',
+            'storagePath' => asset('storage/app/private'),
+            'cart' => $cartItems,
+        ], 200);
     }
 
     /**
@@ -109,7 +113,7 @@ class CartController extends Controller
         $cartItem->qty = $request->input('qty');
         $cartItem->save();
 
-        return response()->json(['message' => 'Cart item updated successfully'], 200);
+        return response()->json(['message' => 'Cart item updated successfully','cart'=>$cartItem], 200);
     }
 
     /**
