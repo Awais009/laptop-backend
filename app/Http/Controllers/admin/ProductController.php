@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
+use App\Models\Navigation;
 use App\Models\Product;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
@@ -22,11 +24,13 @@ class ProductController extends Controller
     public function homeProduct(){
 
         $products = Product::with('image')->whereHas('image')->OrderByDesc('id')->get();
+        $categories = Category::with('sub_categories')->get();
         return response()->json([
             'success' => true,
             'storagePath' => asset('storage/app/private'),
             'message' => 'Products retrieved successfully',
-            'data' => $products
+            'products' => $products,
+            'categories' => $categories
         ], 200);
     }
 
@@ -38,11 +42,13 @@ class ProductController extends Controller
     public function productDetail($SKU){
 
         $product = Product::with('images')->where('SKU',$SKU)->first();
+        $navigation = Navigation::with('items')->get();
         return response()->json([
             'success' => true,
             'storagePath' => asset('storage/app/private'),
             'message' => 'Products retrieved successfully',
-            'data' => $product
+            'product' => $product,
+            'navigations' => $navigation
         ], 200);
     }
 
@@ -92,7 +98,7 @@ class ProductController extends Controller
             'navigation_item_id' => 'required|exists:navigation_items,id',
             'sub_category_id' => 'required|exists:sub_categories,id',
             'images' => 'required',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'images.*' => 'image|max:2048',
             'image_description' => 'nullable|string',
         ]);
 
@@ -168,7 +174,7 @@ class ProductController extends Controller
             'navigation_id' => 'sometimes|required|exists:navigations,id',
             'navigation_item_id' => 'sometimes|required|exists:navigation_items,id',
             'sub_category_id' => 'sometimes|required|exists:sub_categories,id',
-            'images.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'images.*' => 'image|max:2048',
         ]);
 
         if ($validator->fails()) {
