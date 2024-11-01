@@ -17,4 +17,11 @@ class Product extends Model
         return $this->hasOne(ProductImage::class);
     }
 
+    public function navigation(){
+        return $this->belongsTo(Navigation::class);
+    }
+    public function navigation_item(){
+        return $this->belongsTo(NavigationItem::class);
+    }
+
 }

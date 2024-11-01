@@ -44,6 +44,12 @@ class CartController extends Controller
             // Update quantity
             $existingCart->qty += $request->input('qty');
             $existingCart->save();
+
+            return response()->json([
+                'message' => 'Product added to cart successfully',
+                'status' => false,
+                'cart' => $existingCart
+            ], 201);
         } else {
             // Create new cart entry
             $cart = new Cart();
@@ -51,9 +57,16 @@ class CartController extends Controller
             $cart->qty = $request->input('qty');
             $cart->user_id = $user->id;
             $cart->save();
+
+            $dataCart = Cart::with('product.image')->find($cart->id);
+            return response()->json([
+                'message' => 'Product added to cart successfully',
+                'status' => true,
+                'cart' => $dataCart
+            ], 201);
         }
 
-        return response()->json(['message' => 'Product added to cart successfully'], 201);
+
     }
 
     /**

@@ -21,9 +21,26 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function homeProduct(){
+    public function allProduct(Request $request){
 
-        $products = Product::with('image')->whereHas('image')->OrderByDesc('id')->get();
+
+        $products = Product::with('image')
+            ->when($request->nav, function ($query) use ($request) {
+                $query->whereHas('navigation', function ($subQuery) use ($request) {
+                    $subQuery->where('title', $request->nav);
+                });
+            })
+            ->when($request->nav_item, function ($query) use ($request) {
+                $query->whereHas('navigation_item', function ($subQuery) use ($request) {
+                    $subQuery->where('title', $request->nav_item);
+                });
+            })
+            ->whereHas('image')
+            ->orderByDesc('id')
+            ->get();
+
+return $request;
+
         $categories = Category::with('sub_categories')->get();
         return response()->json([
             'success' => true,
@@ -42,7 +59,7 @@ class ProductController extends Controller
     public function productDetail($SKU){
 
         $product = Product::with('images')->where('SKU',$SKU)->first();
-        $navigation = Navigation::with('items')->get();
+        $navigation = Navigation::with('items','products.image')->get();
         return response()->json([
             'success' => true,
             'storagePath' => asset('storage/app/private'),

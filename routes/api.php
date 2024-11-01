@@ -19,7 +19,7 @@ Route::get('/user', function (Request $request) {
 // Auth Routes
 Route::post('/login', [UserAuthController::class,'login']);
 Route::post('/register', [UserAuthController::class,'register']);
-Route::get('products', [ProductController::class,'homeProduct']);
+Route::get('products', [ProductController::class,'allProduct']);
 Route::get('product-detail/{SKU}', [ProductController::class,'productDetail']);
 Route::get('/home', [HomeController::class,'index']);
 // Admin Routes
