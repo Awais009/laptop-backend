@@ -55,7 +55,6 @@ class UserAuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed',
             'password_confirmation' => 'required',
-            'role' => 'required|in:user',
         ]);
 
         if ($validator->fails()) {
@@ -66,7 +65,6 @@ class UserAuthController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'role' => $request->role,
             'password' => Hash::make($request->password),
         ]);
 

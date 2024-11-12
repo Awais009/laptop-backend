@@ -21,6 +21,7 @@ Route::post('/login', [UserAuthController::class,'login']);
 Route::post('/register', [UserAuthController::class,'register']);
 Route::get('products', [ProductController::class,'allProduct']);
 Route::get('product-detail/{SKU}', [ProductController::class,'productDetail']);
+Route::get('quick-view/{SKU}', [ProductController::class,'quickView']);
 Route::get('/home', [HomeController::class,'index']);
 // Admin Routes
 Route::group(['middleware' => 'auth:sanctum'], function () {
