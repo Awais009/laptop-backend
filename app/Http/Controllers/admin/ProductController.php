@@ -39,8 +39,6 @@ class ProductController extends Controller
             ->orderByDesc('id')
             ->get();
 
-return $request;
-
         $categories = Category::with('sub_categories')->get();
         return response()->json([
             'success' => true,
@@ -58,7 +56,7 @@ return $request;
      */
     public function productDetail($SKU){
 
-        $product = Product::with('images')->where('SKU',$SKU)->first();
+        $product = Product::with('images','navigation_item')->where('SKU',$SKU)->first();
         $navigation = Navigation::with('items','products.image')->get();
         return response()->json([
             'success' => true,
@@ -66,6 +64,23 @@ return $request;
             'message' => 'Products retrieved successfully',
             'product' => $product,
             'navigations' => $navigation
+        ], 200);
+    }
+
+    /**
+     * Create product
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function quickView($SKU){
+
+        $product = Product::with('images','navigation_item')->where('SKU',$SKU)->first();
+
+        return response()->json([
+            'success' => true,
+            'storagePath' => asset('storage/app/private'),
+            'message' => 'Products retrieved successfully',
+            'product' => $product,
         ], 200);
     }
 
