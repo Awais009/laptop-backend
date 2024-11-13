@@ -26,6 +26,8 @@ Route::get('/home', [HomeController::class,'index']);
 // Admin Routes
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/logout', [UserAuthController::class,'logout']);
+    Route::post('/user-info', [UserAuthController::class,'userInfo']);
+
     Route::group([ 'prefix' => '/product'], function () {
         Route::apiResource('products', ProductController::class);
         Route::apiResource('images', ProductImageController::class);
