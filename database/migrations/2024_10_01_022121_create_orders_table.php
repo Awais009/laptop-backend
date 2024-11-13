@@ -13,8 +13,17 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('order_item_id');
+            $table->integer('total');
             $table->unsignedBigInteger('user_id');
+            $table->string('full_name');
+            $table->string('phone_number');
+            $table->string('address');
+            $table->string('address2')->nullable();
+            $table->string('country');
+            $table->string('state');
+            $table->string('city');
+            $table->string('zip_code')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }

@@ -7,6 +7,7 @@ use App\Http\Controllers\admin\ProductController;
 use App\Http\Controllers\admin\ProductImageController;
 use App\Http\Controllers\admin\SubCategoryController;
 use App\Http\Controllers\front\CartController;
+use App\Http\Controllers\front\CheckoutController;
 use App\Http\Controllers\front\HomeController;
 use App\Http\Controllers\front\UserAuthController;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ Route::get('/home', [HomeController::class,'index']);
 // Admin Routes
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/logout', [UserAuthController::class,'logout']);
-    Route::post('/user-info', [UserAuthController::class,'userInfo']);
+    Route::post('/checkout', [CheckoutController::class,'submitOrder']);
 
     Route::group([ 'prefix' => '/product'], function () {
         Route::apiResource('products', ProductController::class);
