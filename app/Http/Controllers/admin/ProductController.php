@@ -129,9 +129,9 @@ class ProductController extends Controller
             'navigation_id' => 'required|exists:navigations,id',
             'navigation_item_id' => 'required|exists:navigation_items,id',
             'sub_category_id' => 'required|exists:sub_categories,id',
-            'images' => 'required',
+            'images' => 'required|array',
             'images.*' => 'image|max:2048',
-            'image_description' => 'nullable|string',
+            'image_description.*' => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
@@ -158,12 +158,12 @@ class ProductController extends Controller
 
         // Upload image
         if($images = $request->file('images')){
-        foreach ($images as $image){
+        foreach ($images as $key => $image){
         $path = $image->store('productImage');
         // Create product image
         $productImage = new ProductImage();
         $productImage->path = $path;
-        $productImage->description = $request->input('description');
+        $productImage->description = $request->image_description[$key];
         $productImage->product_id = $product->id;
         $productImage->save();
         }
