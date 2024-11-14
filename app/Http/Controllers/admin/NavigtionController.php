@@ -49,16 +49,11 @@ class NavigtionController extends Controller
      */
     public function index()
     {
-        // Authentication check
-        $user = Auth::user();
 
-        if (!$user) {
-            return response()->json(['message' => 'Unauthorized'], 401);
-        }
 
-        $navigations = Navigation::all();
+        $navigations = Navigation::with('items')->get();
 
-        return response()->json(['message' => 'Navigations retrieved successfully', 'data' => $navigations], 200);
+        return response()->json(['message' => 'Navigations retrieved successfully', 'navigations' => $navigations], 200);
     }
 
     /**

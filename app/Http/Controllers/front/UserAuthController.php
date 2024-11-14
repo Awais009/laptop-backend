@@ -60,7 +60,7 @@ class UserAuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->messages()], 422);
+            return response()->json(['message' => "Validation failed", 'errors' => $validator->messages()], 422);
         }
 
         // Create user
@@ -74,7 +74,7 @@ class UserAuthController extends Controller
         $token = $user->createToken('register_token')->plainTextToken;
 
         // Return response
-        return response()->json(['token' => $token, 'user' => $user], 201);
+        return response()->json(['message'=>"User registered successfully ", 'token' => $token, 'user' => $user], 201);
     }
 
     /**

@@ -24,6 +24,8 @@ Route::get('products', [ProductController::class,'allProduct']);
 Route::get('product-detail/{SKU}', [ProductController::class,'productDetail']);
 Route::get('quick-view/{SKU}', [ProductController::class,'quickView']);
 Route::get('/home', [HomeController::class,'index']);
+Route::get('/navigations', [NavigtionController::class,'index']);
+
 // Admin Routes
 Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::post('/logout', [UserAuthController::class,'logout']);
