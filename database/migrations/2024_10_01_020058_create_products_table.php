@@ -22,6 +22,8 @@ return new class extends Migration
             $table->unsignedBigInteger('navigation_item_id');
             $table->unsignedBigInteger('sub_category_id');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->unsignedBigInteger('qty');
             $table->unsignedBigInteger('sub_total');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 

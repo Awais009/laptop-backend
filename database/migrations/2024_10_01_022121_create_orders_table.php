@@ -24,7 +24,10 @@ return new class extends Migration
             $table->string('city');
             $table->string('zip_code')->nullable();
             $table->text('message')->nullable();
+            $table->enum('status',['pending','delivery','delivered','cancelled'])->default('pending');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 
