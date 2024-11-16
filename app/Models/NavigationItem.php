@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class NavigationItem extends Model
 {
-    use HasFactory;
+    use HasFactory,SoftDeletes;
 
     public function products()
     {
@@ -16,6 +17,6 @@ class NavigationItem extends Model
 
     public function navigation()
     {
-        $this->belongsTo(NavigationItem::class);
+        $this->belongsTo(NavigationItem::class)->withTrashed();
     }
 }

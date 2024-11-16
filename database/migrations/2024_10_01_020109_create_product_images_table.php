@@ -17,6 +17,8 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->unsignedBigInteger('product_id');
             $table->timestamps();
+            $table->softDeletes();
+
         });
     }
 
