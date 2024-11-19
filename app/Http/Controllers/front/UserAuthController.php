@@ -28,7 +28,7 @@ class UserAuthController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json(['error' => $validator->messages()], 422);
+            return response()->json(['message' => "Validation failed",'errors' => $validator->messages()], 422);
         }
 
         // Attempt login
@@ -88,7 +88,7 @@ class UserAuthController extends Controller
         $user = Auth::user();
 
         if (!$user) {
-            return response()->json(['error' => 'User not authenticated'], 401);
+            return response()->json(['message' => 'User not authenticated'], 401);
         }
 
         $user->tokens()->delete();

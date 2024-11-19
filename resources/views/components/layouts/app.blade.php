@@ -350,9 +350,9 @@
                         <div class="d-flex justify-content-center align-items-center thumb-lg update-icon-box  rounded-circle mx-auto">
                             <i class="iconoir-peace-hand h3 align-self-center mb-0 text-primary"></i>
                         </div>
-                        <h5 class="mt-3">Mannat Themes</h5>
-                        <p class="mb-3 text-muted">Rizz is a high quality web applications.</p>
-                        <a href="javascript: void(0);" class="btn text-primary shadow-sm rounded-pill">Upgrade your plan</a>
+                        <h5 class="mt-3">IT Power Systems</h5>
+                        <p class="mb-3 text-muted">IT Power Systems is a global digital solution.</p>
+                        <a href="https://itpowersystems.com/" target="_blank" class="btn text-primary shadow-sm rounded-pill">Upgrade your Website</a>
                     </div>
                 </div>
             </div><!--end startbar-collapse-->
@@ -418,13 +418,17 @@
                                 <div class="card-body">
                                     <p class="text-muted mb-0">
                                         ©
-                                        <script> document.write(new Date().getFullYear()) </script>
-                                        Rizz
+                                    {{now()->format('Y')}}
+                                        Laptop Shop
                                         <span
                                             class="text-muted d-none d-sm-inline-block float-end">
                                                 Crafted with
                                                 <i class="iconoir-heart text-danger"></i>
-                                                by Mannatthemes</span>
+                                            <a href="https://itpowersystems.com/" target="_blank">
+
+                                                IT Power Systems
+                                            </a>
+                                        </span>
                                     </p>
                                 </div>
                             </div>
