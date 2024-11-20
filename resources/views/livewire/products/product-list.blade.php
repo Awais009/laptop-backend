@@ -113,7 +113,7 @@
                                     </td>
                                     <td class="text-end">
                                         <a href="#"><i class="las la-pen text-secondary fs-18"></i></a>
-                                        <a href="#"><i class="las la-trash-alt text-secondary fs-18"></i></a>
+                                        <a href="#" wire:click.prevent="remove({{$product->id}})"><i class="las la-trash-alt text-secondary fs-18"></i></a>
                                     </td>
                                 </tr>
                             @empty
