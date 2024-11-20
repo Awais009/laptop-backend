@@ -8,6 +8,9 @@
                 <h6 class="fw-semibold fs-16 text-muted mb-1" >{{$navigation->title}}</h6>
                 <h6 class="fs-13 fw-semibold" >{{$navigation->items->count()}} Items </h6>
             </div>
+         {{--   <div>
+                <img src="{{asset('public/assets/images/users/avatar-2.jpg')}}" alt="" height="100" class="rounded ">
+            </div>--}}
             <div x-show="$wire.expand">
                 <div class="mb-3 row">
                     <label for="inputTaskTitle1" class="col-sm-3 col-form-label text-end fw-medium">Title :</label>

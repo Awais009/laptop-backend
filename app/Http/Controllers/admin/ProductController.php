@@ -24,7 +24,7 @@ class ProductController extends Controller
     public function allProduct(Request $request){
 
 
-        $products = Product::with('image','navigation_item')
+        $products = Product::with('image','navigation_item','filters')
             ->when($request->nav, function ($query) use ($request) {
                 $query->whereHas('navigation', function ($subQuery) use ($request) {
                     $subQuery->where('title', $request->nav);

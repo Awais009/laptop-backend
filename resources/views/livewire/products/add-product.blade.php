@@ -37,7 +37,7 @@
                                 <div class="mb-3">
                                     <label class="form-label ">Category</label>
                                         <select class="form-select" aria-label="Default select example"  wire:model="navigation_item_id">
-                                            <option disabled value="">Select Category</option>
+                                            <option  value="">Select Category</option>
                                             @forelse($nav_items as $item)
                                                 <option value="{{$item->id}}">{{$item->title}}</option>
                                             @empty
@@ -82,12 +82,12 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <label class="mb-2">Select Filter Category</label>
+                                <label class="mb-2">Select Filter Tags</label>
                                 <select id="multiSelect" wire:model="sub_category_id">
                                     @forelse($sub_categories as $sub_category)
                                     <option value="{{$sub_category->id}}">{{$sub_category->title}}</option>
                                         @empty
-                                    <option  value="">Category not found</option>
+                                    <option disabled  value="">Tags not found</option>
                                     @endforelse
                                 </select>
                                 @error('sub_category_id')
@@ -109,7 +109,6 @@
                         <div class="row">
                             <div class="col-sm-12 text-end">
                                 <button type="submit" class="btn btn-primary px-4">Submit</button>
-                                <a href="#" wire:click.prevent="add_item" class="btn btn-info px-4">Add Images</a>
                             </div>
                         </div>
                     </form>
@@ -126,6 +125,8 @@
                         <div class="col">
                             <h4 class="card-title">Image Upload</h4>
                         </div><!--end col-->
+
+
                     </div>  <!--end row-->
                 </div><!--end card-header-->
                 <div class="card-body pt-0">
@@ -138,14 +139,16 @@
                         @error('images.'.$index)
                         <small class="text-danger">{{$message}}</small>
                         @enderror
+
+                        <input type="file" id="input-file" name="input-file" accept="image/*" hidden wire:model="images" />
+                        <label class="btn-upload btn btn-primary mt-3" for="input-file">Upload Image</label>
                         @error('images')
                         <small class="text-danger">{{$message}}</small>
                         @enderror
-                        <input type="file" id="input-file" name="input-file" accept="image/*" hidden wire:model="images" />
-                        <label class="btn-upload btn btn-primary mt-3" for="input-file">Upload Image</label>
                       @if($index)
                         <a class="btn-upload btn btn-danger mt-3" href="#" wire:click.prevent="remove_item({{$index}})" >Remove</a>
-
+                        @else
+                                    <a href="#" wire:click.prevent="add_item" class=" btn-upload btn btn-info mt-3">Add Images</a>
                       @endif
                     </div>
                 </div><!--end card-body-->
