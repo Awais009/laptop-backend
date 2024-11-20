@@ -104,9 +104,9 @@ class AddProduct extends Component
 
     public function render()
     {
-        $navigations =  Navigation::all();
-        $nav_items =  NavigationItem::all();
-        $sub_categories =  SubCategory::all();
+        $navigations =  Navigation::OrderByDesc('id')->get();
+        $nav_items =  NavigationItem::where('navigation_id', $this->navigation_id)->get();
+        $sub_categories =  SubCategory::orderByDesc('id')->get();
         return view('livewire.products.add-product',[
             'navigations' => $navigations,
             'nav_items' => $nav_items,

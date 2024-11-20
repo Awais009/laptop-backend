@@ -12,6 +12,7 @@
         <!-- App css -->
         <link href="{{asset('public/assets/libs/simple-datatables/style.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/libs/mobius1-selectr/selectr.min.css')}}" rel="stylesheet" type="text/css" />
+
         <link href="{{asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
@@ -301,13 +302,13 @@
                             </a>
                         </li><!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarDashboards" >
+                            <a class="nav-link" href="{{route('navigation')}}" >
                                 <i class="iconoir-home-simple menu-icon"></i>
                                 <span>Navigations</span>
                             </a>
                         </li><!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarDashboards" >
+                            <a class="nav-link" href="{{route('category')}}" >
                                 <i class="iconoir-home-simple menu-icon"></i>
                                 <span>Categories</span>
                             </a>
@@ -445,6 +446,7 @@
 
     <script src="{{asset('public/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('public/assets/libs/simplebar/simplebar.min.js')}}"></script>
+
     <script src="{{asset('public/assets/libs/mobius1-selectr/selectr.min.js')}}"></script>
     <script src="{{asset('public/assets/libs/simple-datatables/umd/simple-datatables.js')}}"></script>
     <script src="{{asset('public/assets/js/app.js')}}"></script>

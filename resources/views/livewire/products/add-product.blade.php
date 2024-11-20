@@ -18,8 +18,8 @@
                             <div class="col-md-6">
                                 <div class="mb-3 ">
                                     <label class="form-label ">Navigation</label>
-                                        <select class="form-select" aria-label="Default select example"  wire:model="navigation_id">
-                                            <option disabled value="">Open this select menu</option>
+                                        <select class="form-select" aria-label="Default select example"  wire:model.live="navigation_id">
+                                            <option disabled value="">Select Navigation</option>
                                             @forelse($navigations as $nav)
                                                 <option value="{{$nav->id}}">{{$nav->title}}</option>
 
@@ -37,7 +37,7 @@
                                 <div class="mb-3">
                                     <label class="form-label ">Category</label>
                                         <select class="form-select" aria-label="Default select example"  wire:model="navigation_item_id">
-                                            <option disabled value="">Open this select menu</option>
+                                            <option disabled value="">Select Category</option>
                                             @forelse($nav_items as $item)
                                                 <option value="{{$item->id}}">{{$item->title}}</option>
                                             @empty

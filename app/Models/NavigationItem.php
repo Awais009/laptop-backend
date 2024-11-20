@@ -9,14 +9,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class NavigationItem extends Model
 {
     use HasFactory,SoftDeletes;
+    protected $guarded;
 
     public function products()
     {
-        $this->hasMany(Product::class);
+     return   $this->hasMany(Product::class);
     }
 
     public function navigation()
     {
-        $this->belongsTo(NavigationItem::class)->withTrashed();
+       return $this->belongsTo(NavigationItem::class)->withTrashed();
     }
 }

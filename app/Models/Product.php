@@ -19,10 +19,10 @@ class Product extends Model
     }
 
     public function navigation(){
-        return $this->belongsTo(Navigation::class);
+        return $this->belongsTo(Navigation::class)->withTrashed();
     }
     public function navigation_item(){
-        return $this->belongsTo(NavigationItem::class);
+        return $this->belongsTo(NavigationItem::class)->withTrashed();
     }
 
     public function filters(){

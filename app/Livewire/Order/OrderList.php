@@ -7,6 +7,7 @@ use Livewire\Component;
 
 class OrderList extends Component
 {
+
     public function render()
     {
         $orders = Order::orderByDesc('id')->get();
