@@ -12,6 +12,7 @@
         <!-- App css -->
         <link href="{{asset('public/assets/libs/simple-datatables/style.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/libs/mobius1-selectr/selectr.min.css')}}" rel="stylesheet" type="text/css" />
+
         <link href="{{asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />
@@ -301,13 +302,13 @@
                             </a>
                         </li><!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarDashboards" >
+                            <a class="nav-link" href="{{route('navigation')}}" >
                                 <i class="iconoir-home-simple menu-icon"></i>
                                 <span>Navigations</span>
                             </a>
                         </li><!--end nav-item-->
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarDashboards" >
+                            <a class="nav-link" href="{{route('category')}}" >
                                 <i class="iconoir-home-simple menu-icon"></i>
                                 <span>Categories</span>
                             </a>
@@ -350,9 +351,9 @@
                         <div class="d-flex justify-content-center align-items-center thumb-lg update-icon-box  rounded-circle mx-auto">
                             <i class="iconoir-peace-hand h3 align-self-center mb-0 text-primary"></i>
                         </div>
-                        <h5 class="mt-3">Mannat Themes</h5>
-                        <p class="mb-3 text-muted">Rizz is a high quality web applications.</p>
-                        <a href="javascript: void(0);" class="btn text-primary shadow-sm rounded-pill">Upgrade your plan</a>
+                        <h5 class="mt-3">IT Power Systems</h5>
+                        <p class="mb-3 text-muted">IT Power Systems is a global digital solution.</p>
+                        <a href="https://itpowersystems.com/" target="_blank" class="btn text-primary shadow-sm rounded-pill">Upgrade your Website</a>
                     </div>
                 </div>
             </div><!--end startbar-collapse-->
@@ -418,13 +419,17 @@
                                 <div class="card-body">
                                     <p class="text-muted mb-0">
                                         ©
-                                        <script> document.write(new Date().getFullYear()) </script>
-                                        Rizz
+                                    {{now()->format('Y')}}
+                                        Laptop Shop
                                         <span
                                             class="text-muted d-none d-sm-inline-block float-end">
                                                 Crafted with
                                                 <i class="iconoir-heart text-danger"></i>
-                                                by Mannatthemes</span>
+                                            <a href="https://itpowersystems.com/" target="_blank">
+
+                                                IT Power Systems
+                                            </a>
+                                        </span>
                                     </p>
                                 </div>
                             </div>
@@ -441,6 +446,7 @@
 
     <script src="{{asset('public/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('public/assets/libs/simplebar/simplebar.min.js')}}"></script>
+
     <script src="{{asset('public/assets/libs/mobius1-selectr/selectr.min.js')}}"></script>
     <script src="{{asset('public/assets/libs/simple-datatables/umd/simple-datatables.js')}}"></script>
     <script src="{{asset('public/assets/js/app.js')}}"></script>

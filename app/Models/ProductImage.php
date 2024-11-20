@@ -11,7 +11,7 @@ class ProductImage extends Model
     use HasFactory,SoftDeletes;
 
     public function product(){
-        return $this->belongsTo(Product::class);
+        return $this->belongsTo(Product::class)->withTrashed();
     }
 
 }

@@ -16,7 +16,7 @@ class HomeController extends Controller
      */
     public function index(){
 
-        $navigations = Navigation::with('products.image')->get();
+        $navigations = Navigation::with('products.image','products.navigation_item')->get();
 
         return response()->json([
             'success' => true,

@@ -1,3 +1,11 @@
+{{--<style>
+    .start-25 {
+        left: 33.33% !important;
+    }
+    .start-75 {
+        left: 66.66% !important;
+    }
+</style>--}}
 <div class="container-xxl">
     <div class="row">
         <div class="col-lg-8">
@@ -70,10 +78,9 @@
                         <div class="progress" role="progressbar" aria-label="Progress" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 1px;">
                             <div class="progress-bar"  style="width: @switch($order?->status) @case('delivery') 50% @break @case('delivered') 100% @break @default 0% @endswitch "></div>
                         </div>
-
-                        <div class="position-absolute top-0 start- translate-middle @switch($order?->status) @case('delivery') bg-primary text-white @break @case('delivered') bg-primary text-white @break @case('cancelled') bg-danger text-white @break @default bg-primary-subtle text-primary @endswitch   rounded-pill thumb-md"><i class="iconoir-home"></i></div>
-                        <div class="position-absolute top-0 start-50 translate-middle @switch($order?->status) @case('delivery') bg-primary-subtle text-primary @break @case('delivered') bg-primary text-white @break @case('cancelled') bg-danger text-white @break @default bg-light text-dark @endswitch  rounded-pill thumb-md"><i class="iconoir-delivery-truck"></i></div>
-                        <div class="position-absolute top-0 start-100 translate-middle @switch($order?->status) @case('delivery') bg-primary->subtle text-dark @break @case('delivered') bg-primary text-white @break @case('cancelled') bg-danger text-white @break @default bg-light text-dark @endswitch rounded-pill thumb-md"><i class="iconoir-map-pin"></i></div>
+                        <div  @if($order?->status !== 'cancelled') role="button" wire:click="changeStatus('pending')" @endif class="position-absolute top-0 start- translate-middle @switch($order?->status) @case('delivery') bg-primary text-white @break @case('delivered') bg-primary text-white @break @case('cancelled') bg-danger text-white @break @default bg-primary-subtle text-primary @endswitch   rounded-pill thumb-md"><i class="iconoir-home"></i></div>
+                        <div  @if($order?->status !== 'cancelled') role="button" wire:click="changeStatus('delivery')" @endif class="position-absolute top-0 start-50 translate-middle @switch($order?->status) @case('delivery') bg-primary-subtle text-primary @break @case('delivered') bg-primary text-white @break @case('cancelled') bg-danger text-white @break @default bg-light text-dark @endswitch  rounded-pill thumb-md"><i class="iconoir-delivery-truck"></i></div>
+                        <div  @if($order?->status !== 'cancelled') role="button" wire:click="changeStatus('delivered')" @endif class="position-absolute top-0 start-100 translate-middle @switch($order?->status) @case('delivery') bg-primary->subtle text-dark @break @case('delivered') bg-primary text-white @break @case('cancelled') bg-danger text-white @break @default bg-light text-dark @endswitch rounded-pill thumb-md"><i class="iconoir-map-pin"></i></div>
                     </div>
                     @if($order?->status == 'cancelled' )
                         <div class="bg-danger-subtle p-2 border-dashed border-danger rounded mt-3">
@@ -124,9 +131,8 @@
                                     <span class="badge rounded text-primary bg-primary-subtle fs-12 p-1">Order {{$order?->status}}</span>
 
                                     @break
-                                    <span class="badge rounded text-secondary bg-secondary-subtle fs-12 p-1">Order {{$order?->status}}</span>
-
                                 @default
+                                    <span class="badge rounded text-secondary bg-secondary-subtle fs-12 p-1">Order {{$order?->status}}</span>
                             @endswitch
                         </div><!--end col-->
                     </div>  <!--end row-->
