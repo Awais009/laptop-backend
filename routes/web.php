@@ -20,7 +20,7 @@ Route::get('/navigation', Navigations::class)->name('navigation');
 Route::get('/filter', Categories::class)->name('category');
 Route::get('/invoice/{id}', Invoice::class)->name('invoice');
 Route::get('/link', function (){
-   artisan::call('storage:link');
+   Artisan::call('storage:link');
    return 'ok';
 });
 
