@@ -10,7 +10,7 @@ use App\Livewire\Products\AddProduct;
 use App\Livewire\Products\ProductList;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/admin', Dashboard::class)->name('home');
+Route::get('/', Dashboard::class)->name('home');
 Route::get('/product-list', ProductList::class)->name('product.list');
 Route::get('/add-product', AddProduct::class)->name('product.add');
 Route::get('/order-list', OrderList::class)->name('order.list');
