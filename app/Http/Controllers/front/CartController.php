@@ -87,7 +87,7 @@ class CartController extends Controller
 
         return response()->json([
             'message' => 'Cart items retrieved successfully',
-            'storagePath' => asset('storage/app/private'),
+            'storagePath' => asset('storage/app'),
             'cart' => $cartItems,
         ], 200);
     }

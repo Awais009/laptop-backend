@@ -42,7 +42,7 @@ class ProductController extends Controller
         $categories = Category::with('sub_categories')->get();
         return response()->json([
             'success' => true,
-            'storagePath' => asset('storage/app/private'),
+            'storagePath' => asset('storage/app'),
             'message' => 'Products retrieved successfully',
             'products' => $products,
             'categories' => $categories
@@ -60,7 +60,7 @@ class ProductController extends Controller
         $navigation = Navigation::with('items','products.image')->get();
         return response()->json([
             'success' => true,
-            'storagePath' => asset('storage/app/private'),
+            'storagePath' => asset('storage/app'),
             'message' => 'Products retrieved successfully',
             'product' => $product,
             'navigations' => $navigation
@@ -78,7 +78,7 @@ class ProductController extends Controller
 
         return response()->json([
             'success' => true,
-            'storagePath' => asset('storage/app/private'),
+            'storagePath' => asset('storage/app'),
             'message' => 'Products retrieved successfully',
             'product' => $product,
         ], 200);

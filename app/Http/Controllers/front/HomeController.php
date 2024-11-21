@@ -20,7 +20,7 @@ class HomeController extends Controller
 
         return response()->json([
             'success' => true,
-            'storagePath' => asset('storage/app/private'),
+            'storagePath' => asset('storage/app'),
             'message' => 'Products retrieved successfully',
             'navigations' => $navigations
         ], 200);

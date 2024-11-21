@@ -37,7 +37,7 @@
                             @foreach($order->items as $item)
                                 <tr>
                                     <td>
-                                        <img src="{{asset('storage/app/private/'.$item->product?->image?->path)}}" alt="" height="40">
+                                        <img src="{{asset('storage/app/'.$item->product?->image?->path)}}" alt="" height="40">
                                         <p class="d-inline-block align-middle mb-0">
                                             <span class="d-block align-middle mb-0 product-name text-body">{{$item->product?->title}}</span>
                                             <span class="text-muted font-13">{{$item->product?->SKU}}</span>
