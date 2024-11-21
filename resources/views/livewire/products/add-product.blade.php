@@ -3,7 +3,7 @@
 
 
     <div class="row justify-content-center">
-        <div class="col-md-6 col-lg-6">
+        <div class="col-md-6 @if($images) col-lg-8 @else col-lg-12 @endif ">
             <div class="card">
                 <div class="card-header">
                     <div class="row align-items-center">
@@ -108,6 +108,13 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-12 text-end">
+                                @error('images')
+                                <small class="text-danger">{{$message}}</small>
+                                @enderror
+                                <label class="btn btn-info text-light">
+                                    Upload Image <input type="file" accept="image/*" multiple hidden wire:model="images">
+                                </label>
+
                                 <button type="submit" class="btn btn-primary px-4">Submit</button>
                             </div>
                         </div>
@@ -116,8 +123,10 @@
             </div><!--end card-->
 
         </div> <!--end col-->
-        <div class="col-md-6 col-lg-6">
-            @foreach($items as $index => $item)
+
+        @if($images)
+        <div class="col-md-6 col-lg-4">
+            @foreach($images as $index => $item)
             <div class="card" wire:key="item-{{ $index }}">
                 <div class="card-header">
                     <div class="row align-items-center">
@@ -128,53 +137,35 @@
                 </div><!--end card-header-->
                 <div class="card-body pt-0">
                     <div class="d-grid">
-
                         <div class="d-flex">
                             <div class="form-group justify-content-center">
                                 <div class="d-flex align-items-center">
                                     @if(isset($images[$index]))
                                     <img src="{{ optional($images[$index])->temporaryUrl() }}" alt="" class="thumb-xxl rounded me-3">
                                     @endif
-                                    <div class="flex-grow-1 text-truncate">
-                                        <label class="btn btn-primary text-light">
-                                            Upload Image <input type="file" accept="image/*" hidden wire:model="images">
-                                        </label>
-
-                                    </div><!--end media body-->
-
                                 </div>
-
                             </div>
-
                         </div>
-                        @error('images')
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
+
                         <p class="text-muted">description about image</p>
-
                         <textarea class="form-control" name="" id=""  rows="5" wire:model="image_description.{{$index}}"></textarea>
-                        @error('image_description.'.$index)
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
 
-
-
-{{--                        <input type="file" id="input-file" name="input-file" accept="image/*" hidden wire:model="images" />--}}
-{{--                        <label class="btn-upload btn btn-primary mt-3" for="input-file">Upload Image</label>--}}
                         @error('images.'.$index)
                         <small class="text-danger">{{$message}}</small>
                         @enderror
-                      @if($index)
                         <a class="btn-upload btn btn-danger mt-3" href="#" wire:click.prevent="remove_item({{$index}})" >Remove</a>
-                        @else
-                                    <a href="#" wire:click.prevent="add_item" class=" btn-upload btn btn-info mt-3">Add Images</a>
-                      @endif
+
                     </div>
                 </div><!--end card-body-->
             </div><!--end card-->
             @endforeach
 
+
+
+
         </div> <!--end col-->
+
+        @endif
 
     </div><!--end row-->
 

@@ -18,7 +18,6 @@ use Livewire\WithFileUploads;
 class AddProduct extends Component
 {
     use WithFileUploads;
-    public $items = [''];
  public $title = '';
  public $price = '';
  public $description = '';
@@ -28,20 +27,13 @@ class AddProduct extends Component
  public $sub_category_id = [];
 
  public $images = [];
- public $image_description = [''];
+ public $image_description = [];
 
-    public function add_item()
-    {
-        $this->items[] = '';
-        $this->image_description[] = '';
-    }
+
     public function remove_item($index)
     {
-        unset($this->items[$index]);
         unset($this->images[$index]);
         unset($this->image_description[$index]);
-
-
     }
 
   public  function save()
@@ -56,7 +48,6 @@ class AddProduct extends Component
             'sub_category_id' => 'required|exists:sub_categories,id',
             'images' => 'required',
             'images.*' => 'required|mimes:jpeg,jpg,png,gif|max:2048',
-            'image_description.*' => 'nullable',
         ]);
 
         $sku = "SKU_".Str::random(10);

@@ -6,11 +6,11 @@
                 <div class="card-body bg-black">
                     <div class="row">
                         <div class="col-4 align-self-center">
-                            <img src="assets/images/logo-sm.png" alt="logo-small" class="logo-sm me-1" height="70" >
+                            <img src="{{asset('public/assets/images/logo.png')}}" alt="logo-small" class="logo-sm me-1" height="70" >
                         </div><!--end col-->
                         <div class="col-8 text-end align-self-center">
-                            <h5 class="mb-1 fw-semibold text-white"><span class="text-muted">Invoice:</span> #BBN2351D458</h5>
-                            <h5 class="mb-0 fw-semibold text-white"><span class="text-muted">Issue Date:</span> 20/07/2024</h5>
+                            <h5 class="mb-1 fw-semibold text-white"><span class="text-muted">Invoice:</span> #{{$order?->id}}</h5>
+                            <h5 class="mb-0 fw-semibold text-white"><span class="text-muted">Issue Date: </span> {{$order?->created_at?->format('F/d/Y')}}</h5>
                         </div><!--end col-->
                     </div><!--end row-->
                 </div><!--end card-body-->
@@ -19,27 +19,27 @@
                         <div class="col-md-3 d-print-flex align-self-center">
                             <div class="">
                                 <span class="badge rounded text-dark bg-light">Invoice to</span>
-                                <h5 class="my-1 fw-semibold fs-18">Michael Reyes</h5>
-                                <p class="text-muted ">@Michael_Reyes|+1 123 456 789</p>
+                                <h5 class="my-1 fw-semibold fs-18">{{$order?->full_name}}</h5>
+                                <p class="text-muted ">{{$order?->email}}|{{$order?->phone_number}}</p>
                             </div>
                         </div><!--end col-->
                         <div class="col-md-3 d-print-flex align-self-center">
                             <div class="">
                                 <address class="fs-13">
-                                    <strong class="fs-14">Billed To :</strong><br>
-                                    854 Ave Folsom <br>
-                                    San Francisco, CA 36925<br>
-                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                    <strong class="fs-14">Address 1 :</strong><br>
+                                    {{$order?->address}} <br>
+                                    {{$order?->city}} {{$order?->state}}, {{$order?->country}} {{$order?->zip_code}}<br>
+                                    <abbr title="Phone">P:</abbr> {{$order?->phone_number}}
                                 </address>
                             </div>
                         </div><!--end col-->
                         <div class="col-md-3 d-print-flex align-self-center">
                             <div class="">
                                 <address class="fs-13">
-                                    <strong class="fs-14">Shipped To:</strong><br>
-                                    795 Folsom Ave<br>
-                                    San Francisco, CA 94107<br>
-                                    <abbr title="Phone">P:</abbr> (123) 456-7890
+                                    <strong class="fs-14">Address 2:</strong><br>
+                                    {{$order?->address}} <br>
+                                    {{$order?->city}} {{$order?->state}}, {{$order?->country}} {{$order?->zip_code}}<br>
+                                    <abbr title="Phone">P:</abbr> {{$order?->phone_number}}
                                 </address>
                             </div>
                         </div> <!--end col-->
@@ -52,54 +52,41 @@
                                     <thead class="table-light">
                                     <tr>
                                         <th>Project Breakdown</th>
-                                        <th>Hours</th>
-                                        <th>Rate</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
                                         <th>Subtotal</th>
                                     </tr><!--end tr-->
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>
-                                            <h5 class="mt-0 mb-1 fs-14">Project Design</h5>
-                                            <p class="mb-0 text-muted">It is a long established fact that a reader will be distracted.</p>
-                                        </td>
-                                        <td>60</td>
-                                        <td>$50</td>
-                                        <td>$3000.00</td>
-                                    </tr><!--end tr-->
-                                    <tr>
-                                        <td>
-                                            <h5 class="mt-0 mb-1 fs-14">Development</h5>
-                                            <p class="mb-0 text-muted">It is a long established fact that a reader will be distracted.</p>
-                                        </td>
-                                        <td>100</td>
-                                        <td>$50</td>
-                                        <td>$5000.00</td>
-                                    </tr><!--end tr-->
-                                    <tr>
-                                        <td>
-                                            <h5 class="mt-0 mb-1 fs-14">Testing & Bug Fixing</h5>
-                                            <p class="mb-0 text-muted">It is a long established fact that a reader will be distracted.</p>
-                                        </td>
-                                        <td>10</td>
-                                        <td>$20</td>
-                                        <td>$200.00</td>
-                                    </tr><!--end tr-->
+                                    @if($order)
+                                    @foreach($order->items as $item)
+                                        <tr>
+                                            <td>
+                                                <h5 class="mt-0 mb-1 fs-14">{{$item->product?->title}}</h5>
+                                                <p class="mb-0 text-muted">{{$item->product?->description}}</p>
+                                            </td>
+                                            <td>${{$item->sub_total/$item->qty}}</td>
+                                            <td>{{$item->qty}}</td>
+                                            <td>${{$item->sub_total}}</td>
+                                        </tr><!--end tr-->
+
+                                    @endforeach
+                                    @endif
 
                                     <tr>
                                         <td colspan="1" class="border-0"></td>
                                         <td colspan="2" class="border-0 fs-14 text-dark"><b>Sub Total</b></td>
-                                        <td class="border-0 fs-14 text-dark"><b>$82,000.00</b></td>
+                                        <td class="border-0 fs-14 text-dark"><b>${{$order?->total}}</b></td>
                                     </tr><!--end tr-->
                                     <tr>
                                         <th colspan="1" class="border-0"></th>
-                                        <td colspan="2" class="border-0 fs-14 text-dark"><b>Tax Rate</b></td>
-                                        <td class="border-0 fs-14 text-dark"><b>$0.00%</b></td>
+                                        <td colspan="2" class="border-0 fs-14 text-dark"><b>Shipping Rate</b></td>
+                                        <td class="border-0 fs-14 text-dark"><b>Free</b></td>
                                     </tr><!--end tr-->
                                     <tr class="">
                                         <th colspan="1" class="border-0"></th>
                                         <td colspan="2" class="border-0 fs-14"><b>Total</b></td>
-                                        <td class="border-0 fs-14"><b>$82,000.00</b></td>
+                                        <td class="border-0 fs-14"><b>${{$order?->total}}</b></td>
                                     </tr><!--end tr-->
                                     </tbody>
                                 </table><!--end table-->
@@ -117,10 +104,8 @@
                             </ul>
                         </div> <!--end col-->
                         <div class="col-lg-6 align-self-center">
-                            <div class="float-none float-md-end" style="width: 30%;">
-                                <small>Account Manager</small>
-                                <img src="assets/images/extra/signature.png" alt="" class="mt-2 mb-1" height="24">
-                                <p class="border-top">Signature</p>
+                            <div class=" float-end mt-5" style="width: 30%;">
+                                <p class="border-top">Recipient Signature</p>
                             </div>
                         </div><!--end col-->
                     </div><!--end row-->

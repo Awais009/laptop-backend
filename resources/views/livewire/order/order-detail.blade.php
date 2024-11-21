@@ -12,11 +12,14 @@
 
             <div class="card">
                 <div class="card-header">
-                    <div class="row align-items-center">
+                    <div class="row justify-content-between align-items-center">
                         <div class="col">
                             <h4 class="card-title">Orders #{{$order?->id}}</h4>
                             <p class="mb-0 text-muted mt-1">{{$order?->created_at?->format('F-d-Y')}}</p>
                         </div><!--end col-->
+                        <div class="col d-flex justify-content-end">
+                            <a href="{{route('invoice',$order?->id)}}" class="btn btn-info">Create Invoice</a>
+                        </div>
 
                     </div>  <!--end row-->
                 </div><!--end card-header-->
@@ -151,7 +154,7 @@
                         </div>
                         <div class="d-flex justify-content-between">
                             <p class="text-body fw-semibold mb-0">Shipping Cost :</p>
-                            <p class="text-body-emphasis fw-semibold mb-0">$0</p>
+                            <p class="text-body-emphasis fw-semibold mb-0">Free</p>
                         </div>
                     </div>
                     <hr class="hr-dashed">

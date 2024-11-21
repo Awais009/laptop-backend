@@ -103,27 +103,27 @@
                     <ul class="navbar-nav mb-auto w-100">
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#sidebarDashboards" >
-                                <i class="iconoir-home-simple menu-icon"></i>
+                            <a class="nav-link" href="{{route('home')}}" >
+                                <i class="iconoir-report-columns menu-icon"></i>
                                 <span>Dashboards</span>
                             </a>
                         </li><!--end nav-item-->
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('navigation')}}" >
-                                <i class="iconoir-home-simple menu-icon"></i>
+                                <i class="iconoir-navigator-alt menu-icon"></i>
                                 <span>Navigations</span>
                             </a>
                         </li><!--end nav-item-->
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('category')}}" >
-                                <i class="iconoir-home-simple menu-icon"></i>
-                                <span>Categories</span>
+                                <i class="iconoir-compact-disc menu-icon"></i>
+                                <span>Filter Tags</span>
                             </a>
                         </li><!--end nav-item-->
                         <li class="nav-item">
                             <a class="nav-link" href="#sidebarApplications" data-bs-toggle="collapse" role="button"
                                aria-expanded="false" aria-controls="sidebarApplications">
-                                <i class="iconoir-view-grid menu-icon"></i>
+                                <i class="iconoir-shirt menu-icon"></i>
                                 <span>Products</span>
                             </a>
                             <div class="collapse " id="sidebarApplications">
@@ -148,7 +148,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('order.list')}}" >
-                                <i class="iconoir-home-simple menu-icon"></i>
+                                <i class="iconoir-shop menu-icon"></i>
                                 <span>Orders</span>
                             </a>
                         </li><!--end nav-item-->
