@@ -10,9 +10,10 @@
                         <div class="col-auto">
                             <div class="dropdown">
                                 <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="icofont-calendar fs-5 me-1"></i> {{$typeFilter == 'all' ? "Un Assigned Product" : "Assigned ".$typeFilter }}<i class="las la-angle-down ms-1"></i>
+                                    <i class="icofont-calendar fs-5 me-1"></i> {{$typeFilter ? ($typeFilter == 'all' ? "Un Assigned Product" : "Assigned ".$typeFilter) : "All" }}<i class="las la-angle-down ms-1"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" style="">
+                                    <a class="dropdown-item" wire:click="filterType('')" href="#">All</a>
                                     <a class="dropdown-item" wire:click="filterType('all')" href="#">Un Assigned Product</a>
                                     <a class="dropdown-item" wire:click="filterType('banner')" href="#">Assigned Banner</a>
                                     <a class="dropdown-item" wire:click="filterType('featured')" href="#">Assigned Featured</a>
@@ -62,17 +63,23 @@
                                     <td>{{$product->navigation_item->title}}</td>
                                     <td>{{$product->images->count()}}</td>
                                     <td>${{$product->price}}</td>
-                                    <td><span class="badge bg-success-subtle text-success"><i class="fas fa-check me-1"></i> Published</span></td>
+                                    <td>
+                                        @if($product->status)
+                                            <span class="badge bg-success-subtle text-success"><i class="fas fa-check me-1"></i>Published</span>
+                                        @else
+                                            <span class="badge bg-danger-subtle text-danger"><i class="fas fa-x me-1"></i>Pending</span>
+
+                                        @endif                                    </td>
                                     <td>
                                         <span>{{$product->created_at?->format('F-d-Y')}}</span>
                                     </td>
                                     <td class="text-end">
                                         <div class="dropdown">
                                             <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="icofont-calendar fs-5 me-1"></i> {{$product->type}}<i class="las la-angle-down ms-1"></i>
+                                                <i class="icofont-calendar fs-5 me-1"></i> {{$product->type == 'all' ? "Un Assigned Product" : "Assigned ".$product->type}}<i class="las la-angle-down ms-1"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end" style="">
-                                                <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'all')" href="#">All</a>
+                                                <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'all')" href="#">Un Assigned Product</a>
                                                 <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'banner')" href="#">Banner</a>
                                                 <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'featured')" href="#">Featured</a>
                                                 <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'top_sale')" href="#">Top Sale</a>

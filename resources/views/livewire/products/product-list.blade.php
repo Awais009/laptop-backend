@@ -107,7 +107,14 @@
                                     <td>{{$product->navigation_item->title}}</td>
                                     <td>{{$product->images->count()}}</td>
                                     <td>${{$product->price}}</td>
-                                    <td><span class="badge bg-success-subtle text-success"><i class="fas fa-check me-1"></i> Published</span></td>
+                                    <td>
+                                        @if($product->status)
+                                        <span class="badge bg-success-subtle text-success"><i class="fas fa-check me-1"></i>Published</span>
+                                        @else
+                                            <span class="badge bg-danger-subtle text-danger"><i class="fas fa-x me-1"></i>Pending</span>
+
+                                        @endif
+                                    </td>
                                     <td>
                                         <span>{{$product->created_at?->format('F-d-Y')}}</span>
                                     </td>

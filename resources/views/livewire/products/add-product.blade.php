@@ -118,31 +118,50 @@
         </div> <!--end col-->
         <div class="col-md-6 col-lg-6">
             @foreach($items as $index => $item)
-
-            <div class="card">
+            <div class="card" wire:key="item-{{ $index }}">
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col">
                             <h4 class="card-title">Image Upload</h4>
                         </div><!--end col-->
-
-
                     </div>  <!--end row-->
                 </div><!--end card-header-->
                 <div class="card-body pt-0">
                     <div class="d-grid">
+
+                        <div class="d-flex">
+                            <div class="form-group justify-content-center">
+                                <div class="d-flex align-items-center">
+                                    @if(isset($images[$index]))
+                                    <img src="{{ optional($images[$index])->temporaryUrl() }}" alt="" class="thumb-xxl rounded me-3">
+                                    @endif
+                                    <div class="flex-grow-1 text-truncate">
+                                        <label class="btn btn-primary text-light">
+                                            Upload Image <input type="file" accept="image/*" hidden wire:model="images">
+                                        </label>
+
+                                    </div><!--end media body-->
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        @error('images')
+                        <small class="text-danger">{{$message}}</small>
+                        @enderror
                         <p class="text-muted">description about image</p>
+
+                        <textarea class="form-control" name="" id=""  rows="5" wire:model="image_description.{{$index}}"></textarea>
                         @error('image_description.'.$index)
                         <small class="text-danger">{{$message}}</small>
                         @enderror
-                        <textarea class="form-control" name="" id=""  rows="5" wire:model="image_description.{{$index}}"></textarea>
-                        @error('images.'.$index)
-                        <small class="text-danger">{{$message}}</small>
-                        @enderror
 
-                        <input type="file" id="input-file" name="input-file" accept="image/*" hidden wire:model="images" />
-                        <label class="btn-upload btn btn-primary mt-3" for="input-file">Upload Image</label>
-                        @error('images')
+
+
+{{--                        <input type="file" id="input-file" name="input-file" accept="image/*" hidden wire:model="images" />--}}
+{{--                        <label class="btn-upload btn btn-primary mt-3" for="input-file">Upload Image</label>--}}
+                        @error('images.'.$index)
                         <small class="text-danger">{{$message}}</small>
                         @enderror
                       @if($index)

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->integer('price');
             $table->string('SKU');
-            $table->string('description');
+            $table->text('description');
             $table->integer('qty');
             $table->unsignedBigInteger('navigation_id');
             $table->unsignedBigInteger('navigation_item_id');

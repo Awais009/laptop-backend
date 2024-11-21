@@ -26,6 +26,7 @@ class AddProduct extends Component
  public $navigation_id = '';
  public $navigation_item_id = '';
  public $sub_category_id = [];
+
  public $images = [];
  public $image_description = [''];
 
@@ -45,7 +46,6 @@ class AddProduct extends Component
 
   public  function save()
     {
-
         $validator = $this->validate( [
             'title' => 'required|string|max:191',
             'price' => 'required|integer',
@@ -55,7 +55,7 @@ class AddProduct extends Component
             'navigation_item_id' => 'required|exists:navigation_items,id',
             'sub_category_id' => 'required|exists:sub_categories,id',
             'images' => 'required',
-            'images.*' => 'image|max:5048',
+            'images.*' => 'required|mimes:jpeg,jpg,png,gif|max:2048',
             'image_description.*' => 'nullable',
         ]);
 
@@ -89,7 +89,7 @@ class AddProduct extends Component
                 // Create product image
                 ProductImage::create([
                 'path' => $path,
-                'description' => $this->image_description[$key],
+                'description' => $this->image_description[$key] ?? null,
                 'product_id' => $product->id
 
                 ]);
@@ -105,7 +105,7 @@ class AddProduct extends Component
     public function render()
     {
         $navigations =  Navigation::OrderByDesc('id')->get();
-        $nav_items =  NavigationItem::where('navigation_id', $this->navigation_id)->get();
+        $nav_items =  NavigationItem::orderByDesc('id')->get();
         $sub_categories =  SubCategory::orderByDesc('id')->get();
         return view('livewire.products.add-product',[
             'navigations' => $navigations,

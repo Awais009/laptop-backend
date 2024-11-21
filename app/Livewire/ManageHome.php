@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class ManageHome extends Component
 {
-    public $typeFilter = 'all';
+    public $typeFilter = '';
 
     public function filterType($type)
     {
@@ -21,7 +21,7 @@ class ManageHome extends Component
     }
     public function render()
     {
-        $products = Product::where('type',$this->typeFilter)->orderByDesc('id')->get();
+        $products = Product::when($this->typeFilter, fn ($q) => $q->where('type',$this->typeFilter) )->orderByDesc('id')->get();
         return view('livewire.manage-home',['products'=>$products]);
     }
 }
