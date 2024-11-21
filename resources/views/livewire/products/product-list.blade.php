@@ -97,7 +97,7 @@
                                         </div>
                                     </td>
                                     <td class="ps-0">
-                                        <img src="{{asset('storage/app/public/'.$product->image->path)}}" alt="" height="40">
+                                        <img src="{{asset('storage/app/'.$product->image->path)}}" alt="" height="40">
                                         <p class="d-inline-block align-middle mb-0">
                                             <a href="ecommerce-order-details.html" class="d-inline-block align-middle mb-0 product-name">{{$product->title}}</a>
                                             <br>
