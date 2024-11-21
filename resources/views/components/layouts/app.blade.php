@@ -153,6 +153,13 @@
                             </a>
                         </li><!--end nav-item-->
 
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('manage.home')}}" >
+                                <i class="iconoir-home-simple menu-icon"></i>
+                                <span>Mange Home</span>
+                            </a>
+                        </li><!--end nav-item-->
+
                     </ul><!--end navbar-nav--->
                     <div class="update-msg text-center">
                         <div class="d-flex justify-content-center align-items-center thumb-lg update-icon-box  rounded-circle mx-auto">

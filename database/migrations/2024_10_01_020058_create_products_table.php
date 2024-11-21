@@ -20,6 +20,8 @@ return new class extends Migration
             $table->integer('qty');
             $table->unsignedBigInteger('navigation_id');
             $table->unsignedBigInteger('navigation_item_id');
+            $table->string('type')->default('all');
+            $table->boolean('status')->default(true);
             $table->timestamps();
             $table->softDeletes();
 
