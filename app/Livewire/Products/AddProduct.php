@@ -82,17 +82,17 @@ class AddProduct extends Component
                 'product_id' => $product->id,
             ]);
         }
-
         // Upload image
         if($images = $this->images){
             foreach ($images as $key => $image){
-                $path = $image->store('productImage');
+                $path = $image->store('productImage', 'public');
                 // Create product image
-                $productImage = new ProductImage();
-                $productImage->path = $path;
-                $productImage->description = $this->image_description[$key];
-                $productImage->product_id = $product->id;
-                $productImage->save();
+                ProductImage::create([
+                'path' => $path,
+                'description' => $this->image_description[$key],
+                'product_id' => $product->id
+
+                ]);
             }
 
         }
