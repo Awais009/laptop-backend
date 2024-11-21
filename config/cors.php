@@ -20,7 +20,7 @@ return [
     'allowed_methods' => ['GET, POST, PUT, DELETE'],
 
 
-    'allowed_origins' => ['https://papayawhip-chamois-758598.hostingersite.com'],
+    'allowed_origins' => ['https://papayawhip-chamois-758598.hostingersite.com/admin'],
 
     'allowed_origins_patterns' => [],
 
