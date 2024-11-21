@@ -21,5 +21,6 @@ Route::get('/filter', Categories::class)->name('category');
 Route::get('/invoice/{id}', Invoice::class)->name('invoice');
 Route::get('/link', function (){
    artisan::call('storage:link');
+   return 'ok';
 });
 
