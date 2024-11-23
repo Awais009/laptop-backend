@@ -17,12 +17,8 @@ class HomeController extends Controller
     public function index(){
 
         $navigations = Navigation::with('products.image','products.navigation_item')->get();
-        $banners = Product::with('image','images')
-            ->where('type','banner')
-            ->orderByDesc('id')
-            ->get();
-        $best_products = Product::with('image', 'images')
-            ->whereNotIn('type', ['banner', 'all'])
+        $products = Product::with('image', 'images','navigation_item')
+            ->whereNotIn('type', ['all'])
             ->latest()
             ->get()
             ->groupBy('type');
@@ -31,8 +27,7 @@ class HomeController extends Controller
             'storagePath' => asset('storage/app'),
             'message' => 'Products retrieved successfully',
             'navigations' => $navigations,
-            'banners' => $banners,
-            'best_products' => $best_products
+            'products' => json_decode($products,true)
         ], 200);
     }
 }

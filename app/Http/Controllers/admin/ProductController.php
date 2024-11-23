@@ -25,16 +25,19 @@ class ProductController extends Controller
 
 
         $products = Product::with('image','navigation_item','filters')
+
             ->when($request->nav, function ($query) use ($request) {
-                $query->whereHas('navigation', function ($subQuery) use ($request) {
-                    $subQuery->where('title', $request->nav);
+                $query->where(function ($query) use ($request) {
+                    $query->whereHas('navigation', function ($subQuery) use ($request) {
+                        $subQuery->where('title', $request->nav);
+                    })
+                        ->orWhereHas('navigation_item', function ($subQuery) use ($request) {
+                            $subQuery->where('title', $request->nav);
+                        });
                 });
             })
-            ->when($request->nav_item, function ($query) use ($request) {
-                $query->whereHas('navigation_item', function ($subQuery) use ($request) {
-                    $subQuery->where('title', $request->nav_item);
-                });
-            })
+
+
             ->whereHas('image')
             ->orderByDesc('id')
             ->get();
