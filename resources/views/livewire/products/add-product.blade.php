@@ -141,7 +141,7 @@
                             <div class="form-group justify-content-center">
                                 <div class="d-flex align-items-center">
                                     @if(isset($images[$index]))
-                                    <img src="{{ optional($images[$index])->temporaryUrl() }}" alt="" class="thumb-xxl rounded me-3">
+                                    <img src="{{ optional($images[$index])->temporaryUrl() }}" alt="" width="100" height="100" class="thumb-xxl rounded me-3">
                                     @endif
                                 </div>
                             </div>

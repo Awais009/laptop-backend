@@ -10,15 +10,15 @@
                         <div class="col-auto">
                             <div class="dropdown">
                                 <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="icofont-calendar fs-5 me-1"></i> {{$typeFilter ? ($typeFilter == 'all' ? "Un Assigned Product" : "Assigned ".$typeFilter) : "All" }}<i class="las la-angle-down ms-1"></i>
+                                    <i class="icofont-calendar fs-5 me-1"></i> {{$typeFilter ? ($typeFilter == 'all' ? "Un Assigned " : "Assigned ".$typeFilter) : "All Products" }}<i class="las la-angle-down ms-1"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end" style="">
                                     <a class="dropdown-item" wire:click="filterType('')" href="#">All</a>
-                                    <a class="dropdown-item" wire:click="filterType('all')" href="#">Un Assigned Product</a>
-                                    <a class="dropdown-item" wire:click="filterType('banner')" href="#">Assigned Banner</a>
-                                    <a class="dropdown-item" wire:click="filterType('featured')" href="#">Assigned Featured</a>
-                                    <a class="dropdown-item" wire:click="filterType('top_sale')" href="#">Assigned Top Sale</a>
-                                    <a class="dropdown-item" wire:click="filterType('top_rated')" href="#">Assigned Top Rated</a>
+                                    <a class="dropdown-item" wire:click="filterType('all')" href="#">Un Assigned</a>
+                                    <a class="dropdown-item" wire:click="filterType('banner')" href="#">Banner</a>
+                                    <a class="dropdown-item" wire:click="filterType('featured')" href="#">Featured</a>
+                                    <a class="dropdown-item" wire:click="filterType('top_sale')" href="#">Top Sale</a>
+                                    <a class="dropdown-item" wire:click="filterType('top_rated')" href="#">Top Rated</a>
 
                                 </div>
                             </div>
@@ -76,10 +76,10 @@
                                     <td class="text-end">
                                         <div class="dropdown">
                                             <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="icofont-calendar fs-5 me-1"></i> {{$product->type == 'all' ? "Un Assigned Product" : "Assigned ".$product->type}}<i class="las la-angle-down ms-1"></i>
+                                                <i class="icofont-calendar fs-5 me-1"></i> {{$product->type == 'all' ? "Un Assigned" : "Assigned ".$product->type}}<i class="las la-angle-down ms-1"></i>
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-end" style="">
-                                                <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'all')" href="#">Un Assigned Product</a>
+                                                <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'all')" href="#">Un Assigned</a>
                                                 <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'banner')" href="#">Banner</a>
                                                 <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'featured')" href="#">Featured</a>
                                                 <a class="dropdown-item" wire:click.prevent="changeType({{$product->id}},'top_sale')" href="#">Top Sale</a>

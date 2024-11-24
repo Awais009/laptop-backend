@@ -179,7 +179,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/products/01.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/products/01.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0">History Book</h6>
                                                     <a href="#" class="fs-12 text-primary">ID: A3652</a>
@@ -197,7 +197,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/products/02.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/products/02.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0">Colorful Pots</h6>
                                                     <a href="#" class="fs-12 text-primary">ID: A5002</a>
@@ -215,7 +215,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/products/04.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/products/04.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0">Pearl Bracelet</h6>
                                                     <a href="#" class="fs-12 text-primary">ID: A6598</a>
@@ -233,7 +233,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/products/06.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/products/06.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0">Dancing Man</h6>
                                                     <a href="#" class="fs-12 text-primary">ID: A9547</a>
@@ -251,7 +251,7 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/products/05.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/products/05.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0">Fire Lamp</h6>
                                                     <a href="#" class="fs-12 text-primary">ID: A2047</a>
@@ -283,16 +283,16 @@
                                 <div class="col-auto">
                                     <div class="img-group d-flex">
                                         <a class="user-avatar position-relative d-inline-block" href="#">
-                                            <img src="{{asset('assets/images/users/avatar-1.jpg')}}" alt="avatar" class="thumb-md shadow-sm rounded-circle">
+                                            <img src="{{asset('public/assets/images/users/avatar-1.jpg')}}" alt="avatar" class="thumb-md shadow-sm rounded-circle">
                                         </a>
                                         <a class="user-avatar position-relative d-inline-block ms-n2" href="#">
-                                            <img src="{{asset('assets/images/users/avatar-2.jpg')}}" alt="avatar" class="thumb-md shadow-sm rounded-circle">
+                                            <img src="{{asset('public/assets/images/users/avatar-2.jpg')}}" alt="avatar" class="thumb-md shadow-sm rounded-circle">
                                         </a>
                                         <a class="user-avatar position-relative d-inline-block ms-n2" href="#">
-                                            <img src="{{asset('assets/images/users/avatar-4.jpg')}}" alt="avatar" class="thumb-md shadow-sm rounded-circle">
+                                            <img src="{{asset('public/assets/images/users/avatar-4.jpg')}}" alt="avatar" class="thumb-md shadow-sm rounded-circle">
                                         </a>
                                         <a class="user-avatar position-relative d-inline-block ms-n2" href="#">
-                                            <img src="{{asset('assets/images/users/avatar-3.jpg')}}" alt="avatar" class="thumb-md shadow-sm rounded-circle">
+                                            <img src="{{asset('public/assets/images/users/avatar-3.jpg')}}" alt="avatar" class="thumb-md shadow-sm rounded-circle">
                                         </a>
                                         <a href="#" class="user-avatar position-relative d-inline-block ms-1">
                                             <span class="thumb-md shadow-sm justify-content-center d-flex align-items-center bg-info-subtle rounded-circle fw-semibold fs-6">+6</span>
@@ -341,7 +341,7 @@
                                     <tr class="">
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/flags/us_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
+                                                <img src="{{asset('public/assets/images/flags/us_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">USA</h6>
                                                     <div class="d-flex align-items-center">
@@ -358,7 +358,7 @@
                                     <tr class="">
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/flags/spain_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
+                                                <img src="{{asset('public/assets/images/flags/spain_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">Spain</h6>
                                                     <div class="d-flex align-items-center">
@@ -375,7 +375,7 @@
                                     <tr class="">
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/flags/french_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
+                                                <img src="{{asset('public/assets/images/flags/french_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">French</h6>
                                                     <div class="d-flex align-items-center">
@@ -392,7 +392,7 @@
                                     <tr class="">
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/flags/germany_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
+                                                <img src="{{asset('public/assets/images/flags/germany_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">Germany</h6>
                                                     <div class="d-flex align-items-center">
@@ -409,7 +409,7 @@
                                     <tr class="">
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/flags/baha_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
+                                                <img src="{{asset('public/assets/images/flags/baha_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">Bahamas</h6>
                                                     <div class="d-flex align-items-center">
@@ -481,7 +481,7 @@
                                     <tr class="">
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/users/avatar-1.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/users/avatar-1.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">Scott Holland</h6>
                                                     <a href="#" class="font-12 text-muted text-decoration-underline">#3652</a>
@@ -493,7 +493,7 @@
                                     <tr class="">
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/users/avatar-2.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/users/avatar-2.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">Karen Savage</h6>
                                                     <a href="#" class="font-12 text-muted text-decoration-underline">#4789</a>
@@ -505,7 +505,7 @@
                                     <tr class="">
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/users/avatar-3.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/users/avatar-3.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">Steven Sharp </h6>
                                                     <a href="#" class="font-12 text-muted text-decoration-underline">#4521</a>
@@ -517,7 +517,7 @@
                                     <tr class="">
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/users/avatar-4.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/users/avatar-4.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">Teresa Himes  </h6>
                                                     <a href="#" class="font-12 text-muted text-decoration-underline">#3269</a>
@@ -529,7 +529,7 @@
                                     <tr>
                                         <td class="px-0">
                                             <div class="d-flex align-items-center">
-                                                <img src="{{asset('assets/images/users/avatar-5.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
+                                                <img src="{{asset('public/assets/images/users/avatar-5.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
                                                 <div class="flex-grow-1 text-truncate">
                                                     <h6 class="m-0 text-truncate">Ralph Denton</h6>
                                                     <a href="#" class="font-12 text-muted text-decoration-underline">#4521</a>

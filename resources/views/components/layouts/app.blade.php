@@ -1,4 +1,4 @@
-<!DOCTYPE html lang="en" dir="ltr" data-startbar="dark" data-bs-theme="light">
+<!DOCTYPE html >
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -30,10 +30,7 @@
                             <i class="iconoir-menu-scale"></i>
                         </button>
                     </li>
-                    <li class="mx-3 welcome-text">
-                        <h3 class="mb-0 fw-bold text-truncate">ss James!</h3>
-                        <!-- <h6 class="mb-0 fw-normal text-muted text-truncate fs-14">Here's your overview this week.</h6> -->
-                    </li>
+
                 </ul>
                 <ul class="topbar-item list-unstyled d-inline-flex align-items-center mb-0">
                     <li class="hide-phone app-search">
@@ -129,10 +126,10 @@
                             <div class="collapse " id="sidebarApplications">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('product.list')}}">Product List</a>
+                                        <a class="nav-link" href="{{route('product.list')}}" >Product List</a>
                                     </li><!--end nav-item-->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('product.add')}}">Add Product</a>
+                                        <a class="nav-link" href="{{route('product.add')}}" >Add Product</a>
                                     </li><!--end nav-item-->
 
                                 </ul><!--end nav-->
@@ -147,7 +144,7 @@
                             <span>Components</span>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('order.list')}}" >
+                            <a class="nav-link" href="{{route('order.list')}}"  >
                                 <i class="iconoir-shop menu-icon"></i>
                                 <span>Orders</span>
                             </a>
@@ -263,6 +260,6 @@
 
     <script src="{{asset('public/assets/libs/mobius1-selectr/selectr.min.js')}}"></script>
     <script src="{{asset('public/assets/libs/simple-datatables/umd/simple-datatables.js')}}"></script>
-    <script src="{{asset('public/assets/js/app.js')}}"></script>
+    <script src="{{asset('public/assets/js/app.js')}}" data-navigate-once ></script>
     </body>
 </html>

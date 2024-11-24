@@ -36,13 +36,20 @@ class ProductController extends Controller
                         });
                 });
             })
-
-
             ->whereHas('image')
             ->orderByDesc('id')
             ->get();
 
-        $categories = Category::with('sub_categories')->get();
+        $sub_ids = array_unique(
+            array_merge(
+                ...array_map(
+                    fn($product) => $product->filters()->pluck('sub_category_id')->toArray() ?? [],
+                    $products->all()
+                )
+            )
+        );
+
+        $categories = Category::with('sub_categories')->whereHas('sub_categories', fn($query) => $query->whereIn('id',$sub_ids) )->get();
         return response()->json([
             'success' => true,
             'storagePath' => asset('storage/app'),
