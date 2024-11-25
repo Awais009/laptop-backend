@@ -12,7 +12,6 @@
         <!-- App css -->
         <link href="{{asset('public/assets/libs/simple-datatables/style.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/libs/mobius1-selectr/selectr.min.css')}}" rel="stylesheet" type="text/css" />
-
         <link href="{{asset('public/assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/css/app.min.css')}}" rel="stylesheet" type="text/css" />

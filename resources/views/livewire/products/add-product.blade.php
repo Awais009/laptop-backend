@@ -1,7 +1,5 @@
 <div class="container-xxl">
 
-
-
     <div class="row justify-content-center">
         <div class="col-md-6 @if($images) col-lg-8 @else col-lg-12 @endif ">
             <div class="card">
@@ -148,7 +146,8 @@
                         </div>
 
                         <p class="text-muted">description about image</p>
-                        <textarea class="form-control" name="" id=""  rows="5" wire:model="image_description.{{$index}}"></textarea>
+                        <textarea class="form-control editor" name=""   rows="5" wire:model="image_description.{{$index}}">
+                        </textarea>
 
                         @error('images.'.$index)
                         <small class="text-danger">{{$message}}</small>
@@ -175,7 +174,6 @@
             $wire.on('rendered', () => {
 
                 setTimeout(()=>{
-
 
         new Selectr("#multiSelect", { multiple: !0 })
         var hueb = new Huebee(".color-input", { setBGColor: !0, saturations: 3 }),
