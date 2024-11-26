@@ -51,7 +51,7 @@
                                 <table class="table table-bordered mb-0">
                                     <thead class="table-light">
                                     <tr>
-                                        <th>Project Breakdown</th>
+                                        <th>Product Name</th>
                                         <th>Price</th>
                                         <th>Quantity</th>
                                         <th>Subtotal</th>

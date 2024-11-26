@@ -1,67 +1,8 @@
 
         <div class="container-xxl">
             <div class="row">
-                <div class="col-md-12 col-lg-12 col-xl-4">
-                    <div class="row">
-                        <div class="col-md-12 col-lg-6 col-xl-12">
-                            <div class="card">
-                                <div class="card-body border-dashed-bottom pb-3">
-                                    <div class="row d-flex justify-content-between">
-                                        <div class="col-auto">
-                                            <div class="d-flex justify-content-center align-items-center thumb-xl border border-secondary rounded-circle">
-                                                <i class="icofont-money-bag h1 align-self-center mb-0 text-secondary"></i>
-                                            </div>
-                                            <h5 class="mt-2 mb-0 fs-14">Total Revenue</h5>
-                                        </div><!--end col-->
-                                        <div class="col align-self-center">
-                                            <div id="line-1" class="apex-charts float-end"></div>
-                                        </div><!--end col-->
-                                    </div><!--end row-->
-                                </div><!--end card-body-->
-                                <div class="card-body">
-                                    <div class="row d-flex justify-content-center ">
-                                        <div class="col-12 col-md-6">
-                                            <h2 class="fs-22 mt-0 mb-1 fw-bold">$8365.00</h2>
-                                            <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>8.5%</span> New Sessions Today</p>
-                                        </div><!--end col-->
-                                        <div class="col-12 col-md-6 align-self-center text-start text-md-end">
-                                            <button type="button" class="btn btn-primary btn-sm px-2 mt-2 mt-md-0 ">View Report</button>
-                                        </div><!--end col-->
-                                    </div><!--end row-->
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div><!--end col-->
-                        <div class="col-md-12 col-lg-6 col-xl-12">
-                            <div class="card">
-                                <div class="card-body border-dashed-bottom pb-3">
-                                    <div class="row d-flex justify-content-between">
-                                        <div class="col-auto">
-                                            <div class="d-flex justify-content-center align-items-center thumb-xl border border-secondary rounded-circle">
-                                                <i class="icofont-opencart h1 align-self-center mb-0 text-secondary"></i>
-                                            </div>
-                                            <h5 class="mt-2 mb-0 fs-14">New Order</h5>
-                                        </div><!--end col-->
-                                        <div class="col align-self-center ">
-                                            <div id="line-2" class="apex-charts float-end"></div>
-                                        </div><!--end col-->
-                                    </div><!--end row-->
-                                </div><!--end card-body-->
-                                <div class="card-body">
-                                    <div class="row d-flex justify-content-center ">
-                                        <div class="col-12 col-md-6">
-                                            <h2 class="fs-22 mt-0 mb-1 fw-bold">722</h2>
-                                            <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>8.5%</span> New Sessions Today</p>
-                                        </div><!--end col-->
-                                        <div class="col-12 col-md-6 align-self-center text-start text-md-end">
-                                            <button type="button" class="btn btn-outline-secondary btn-sm px-2 mt-2 mt-md-0 ">View  Report</button>
-                                        </div><!--end col-->
-                                    </div><!--end row-->
-                                </div><!--end card-body-->
-                            </div><!--end card-->
-                        </div><!--end col-->
-                    </div> <!--end row-->
-                </div> <!--end col-->
-                <div class="col-md-12 col-lg-12 col-xl-8">
+
+                <div class="col-md-12 col-lg-12 col-xl-12">
                     <div class="card">
                         <div class="card-header">
                             <div class="row align-items-center">
@@ -141,138 +82,6 @@
                 </div> <!--end col-->
             </div><!--end row-->
             <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-8">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <h4 class="card-title">Popular Products</h4>
-                                </div><!--end col-->
-                                <div class="col-auto">
-                                    <div class="dropdown">
-                                        <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="icofont-calendar fs-5 me-1"></i> This Year<i class="las la-angle-down ms-1"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">Today</a>
-                                            <a class="dropdown-item" href="#">Last Week</a>
-                                            <a class="dropdown-item" href="#">Last Month</a>
-                                            <a class="dropdown-item" href="#">This Year</a>
-                                        </div>
-                                    </div>
-                                </div><!--end col-->
-                            </div>  <!--end row-->
-                        </div><!--end card-header-->
-                        <div class="card-body pt-0">
-                            <div class="table-responsive">
-                                <table class="table mb-0">
-                                    <thead class="table-light">
-                                    <tr>
-                                        <th class="border-top-0">Product</th>
-                                        <th class="border-top-0">Price</th>
-                                        <th class="border-top-0">Sell</th>
-                                        <th class="border-top-0">Status</th>
-                                        <th class="border-top-0">Action</th>
-                                    </tr><!--end tr-->
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/products/01.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0">History Book</h6>
-                                                    <a href="#" class="fs-12 text-primary">ID: A3652</a>
-                                                </div><!--end media body-->
-                                            </div>
-                                        </td>
-                                        <td>$50 <del class="text-muted fs-10">$70</del></td>
-                                        <td>450 <small class="text-muted">(550)</small></td>
-                                        <td><span class="badge bg-primary-subtle text-primary px-2">Stock</span></td>
-                                        <td>
-                                            <a href="#"><i class="las la-pen text-secondary fs-18"></i></a>
-                                            <a href="#"><i class="las la-trash-alt text-secondary fs-18"></i></a>
-                                        </td>
-                                    </tr><!--end tr-->
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/products/02.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0">Colorful Pots</h6>
-                                                    <a href="#" class="fs-12 text-primary">ID: A5002</a>
-                                                </div><!--end media body-->
-                                            </div>
-                                        </td>
-                                        <td>$99 <del class="text-muted fs-10">$150</del></td>
-                                        <td>750 <small class="text-muted">(00)</small></td>
-                                        <td><span class="badge bg-danger-subtle text-danger px-2">Out of Stock</span></td>
-                                        <td>
-                                            <a href="#"><i class="las la-pen text-secondary fs-18"></i></a>
-                                            <a href="#"><i class="las la-trash-alt text-secondary fs-18"></i></a>
-                                        </td>
-                                    </tr><!--end tr-->
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/products/04.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0">Pearl Bracelet</h6>
-                                                    <a href="#" class="fs-12 text-primary">ID: A6598</a>
-                                                </div><!--end media body-->
-                                            </div>
-                                        </td>
-                                        <td>$199 <del class="text-muted fs-10">$250</del></td>
-                                        <td>280 <small class="text-muted">(220)</small></td>
-                                        <td><span class="badge bg-primary-subtle text-primary px-2">Stock</span></td>
-                                        <td>
-                                            <a href="#"><i class="las la-pen text-secondary fs-18"></i></a>
-                                            <a href="#"><i class="las la-trash-alt text-secondary fs-18"></i></a>
-                                        </td>
-                                    </tr><!--end tr-->
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/products/06.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0">Dancing Man</h6>
-                                                    <a href="#" class="fs-12 text-primary">ID: A9547</a>
-                                                </div><!--end media body-->
-                                            </div>
-                                        </td>
-                                        <td>$40 <del class="text-muted fs-10">$49</del></td>
-                                        <td>500 <small class="text-muted">(1000)</small></td>
-                                        <td><span class="badge bg-danger-subtle text-danger px-2">Out of Stock</span></td>
-                                        <td>
-                                            <a href="#"><i class="las la-pen text-secondary fs-18"></i></a>
-                                            <a href="#"><i class="las la-trash-alt text-secondary fs-18"></i></a>
-                                        </td>
-                                    </tr><!--end tr-->
-                                    <tr>
-                                        <td>
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/products/05.png')}}" height="40" class="me-3 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0">Fire Lamp</h6>
-                                                    <a href="#" class="fs-12 text-primary">ID: A2047</a>
-                                                </div><!--end media body-->
-                                            </div>
-                                        </td>
-                                        <td>$80 <del class="text-muted fs-10">$59</del></td>
-                                        <td>800 <small class="text-muted">(2000)</small></td>
-                                        <td><span class="badge bg-danger-subtle text-danger px-2">Out of Stock</span></td>
-                                        <td>
-                                            <a href="#"><i class="las la-pen text-secondary fs-18"></i></a>
-                                            <a href="#"><i class="las la-trash-alt text-secondary fs-18"></i></a>
-                                        </td>
-                                    </tr><!--end tr-->
-                                    </tbody>
-                                </table> <!--end table-->
-                            </div><!--end /div-->
-                        </div><!--end card-body-->
-                    </div><!--end card-->
-                </div> <!--end col-->
-
                 <div class="col-md-6 col-lg-4">
                     <div class="card">
                         <div class="card-header">
@@ -310,125 +119,36 @@
                         </div><!--end card-body-->
                     </div><!--end card-->
                 </div> <!--end col-->
-            </div><!--end row-->
-            <div class="row justify-content-center">
+
                 <div class="col-md-6 col-lg-4">
                     <div class="card">
-                        <div class="card-header">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <h4 class="card-title">Top Selling by Country</h4>
-                                </div><!--end col-->
+                        <div class="card-body border-dashed-bottom pb-3">
+                            <div class="row d-flex justify-content-between">
                                 <div class="col-auto">
-                                    <div class="dropdown">
-                                        <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="icofont-calendar fs-5 me-1"></i> This Month<i class="las la-angle-down ms-1"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">Today</a>
-                                            <a class="dropdown-item" href="#">Last Week</a>
-                                            <a class="dropdown-item" href="#">Last Month</a>
-                                            <a class="dropdown-item" href="#">This Year</a>
-                                        </div>
+                                    <div class="d-flex justify-content-center align-items-center thumb-xl border border-secondary rounded-circle">
+                                        <i class="icofont-money-bag h1 align-self-center mb-0 text-secondary"></i>
                                     </div>
+                                    <h5 class="mt-2 mb-0 fs-14">Total Revenue</h5>
                                 </div><!--end col-->
-                            </div>  <!--end row-->
-                        </div><!--end card-header-->
-                        <div class="card-body pt-0">
-                            <div class="table-responsive">
-                                <table class="table mb-0">
-                                    <tbody>
-                                    <tr class="">
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/flags/us_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">USA</h6>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress bg-primary-subtle w-100" style="height:5px;" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                            <div class="progress-bar bg-primary" style="width: 85%"></div>
-                                                        </div>
-                                                        <small class="flex-shrink-1 ms-1">85%</small>
-                                                    </div>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-body ps-2 align-self-center text-end">$5860.00</span></td>
-                                    </tr><!--end tr-->
-                                    <tr class="">
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/flags/spain_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">Spain</h6>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress bg-primary-subtle w-100" style="height:5px;" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                            <div class="progress-bar bg-primary" style="width: 78%"></div>
-                                                        </div>
-                                                        <small class="flex-shrink-1 ms-1">78%</small>
-                                                    </div>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-body ps-2 align-self-center text-end">$5422.00</span></td>
-                                    </tr><!--end tr-->
-                                    <tr class="">
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/flags/french_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">French</h6>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress bg-primary-subtle w-100" style="height:5px;" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                            <div class="progress-bar bg-primary" style="width: 71%"></div>
-                                                        </div>
-                                                        <small class="flex-shrink-1 ms-1">71%</small>
-                                                    </div>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-body ps-2 align-self-center text-end">$4587.00</span></td>
-                                    </tr><!--end tr-->
-                                    <tr class="">
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/flags/germany_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">Germany</h6>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress bg-primary-subtle w-100" style="height:5px;" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                            <div class="progress-bar bg-primary" style="width: 65%"></div>
-                                                        </div>
-                                                        <small class="flex-shrink-1 ms-1">65%</small>
-                                                    </div>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-body ps-2 align-self-center text-end">$3655.00</span></td>
-                                    </tr><!--end tr-->
-                                    <tr class="">
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/flags/baha_flag.jpg')}}" class="me-2 align-self-center thumb-md rounded-circle" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">Bahamas</h6>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress bg-primary-subtle w-100" style="height:5px;" role="progressbar" aria-label="Success example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-                                                            <div class="progress-bar bg-primary" style="width: 48%"></div>
-                                                        </div>
-                                                        <small class="flex-shrink-1 ms-1">48%</small>
-                                                    </div>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-body ps-2 align-self-center text-end">$3325.00</span></td>
-                                    </tr><!--end tr-->
-                                    </tbody>
-                                </table> <!--end table-->
-                            </div><!--end /div-->
+                                <div class="col align-self-center">
+                                    <div id="line-1" class="apex-charts float-end"></div>
+                                </div><!--end col-->
+                            </div><!--end row-->
+                        </div><!--end card-body-->
+                        <div class="card-body">
+                            <div class="row d-flex justify-content-center ">
+                                <div class="col-12 col-md-6">
+                                    <h2 class="fs-22 mt-0 mb-1 fw-bold">$8365.00</h2>
+                                    <p class="mb-0 text-truncate text-muted"><span class="text-success"><i class="mdi mdi-trending-up"></i>8.5%</span> New Sessions Today</p>
+                                </div><!--end col-->
+                                <div class="col-12 col-md-6 align-self-center text-start text-md-end">
+                                    <button type="button" class="btn btn-primary btn-sm px-2 mt-2 mt-md-0 ">View Report</button>
+                                </div><!--end col-->
+                            </div><!--end row-->
                         </div><!--end card-body-->
                     </div><!--end card-->
-                </div> <!--end col-->
+                </div><!--end col-->
+
                 <div class="col-md-6 col-lg-4">
                     <div class="card">
                         <div class="card-header">
@@ -452,99 +172,116 @@
                     </div><!--end card-->
                 </div> <!--end col-->
 
-                <div class="col-md-6 col-lg-4">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="row align-items-center">
-                                <div class="col">
-                                    <h4 class="card-title">Recents Order</h4>
-                                </div><!--end col-->
-                                <div class="col-auto">
-                                    <div class="dropdown">
-                                        <a href="#" class="btn bt btn-light dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            <i class="icofont-calendar fs-5 me-1"></i> This Month<i class="las la-angle-down ms-1"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <a class="dropdown-item" href="#">Today</a>
-                                            <a class="dropdown-item" href="#">Last Week</a>
-                                            <a class="dropdown-item" href="#">Last Month</a>
-                                            <a class="dropdown-item" href="#">This Year</a>
-                                        </div>
-                                    </div>
-                                </div><!--end col-->
-                            </div>  <!--end row-->
-                        </div><!--end card-header-->
-                        <div class="card-body pt-0">
-                            <div class="table-responsive">
-                                <table class="table mb-0">
-                                    <tbody>
-                                    <tr class="">
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/users/avatar-1.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">Scott Holland</h6>
-                                                    <a href="#" class="font-12 text-muted text-decoration-underline">#3652</a>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-primary ps-2 align-self-center text-end">$3325.00</span></td>
-                                    </tr><!--end tr-->
-                                    <tr class="">
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/users/avatar-2.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">Karen Savage</h6>
-                                                    <a href="#" class="font-12 text-muted text-decoration-underline">#4789</a>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-primary ps-2 align-self-center text-end">$2548.00</span></td>
-                                    </tr><!--end tr-->
-                                    <tr class="">
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/users/avatar-3.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">Steven Sharp </h6>
-                                                    <a href="#" class="font-12 text-muted text-decoration-underline">#4521</a>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-primary ps-2 align-self-center text-end">$2985.00</span></td>
-                                    </tr><!--end tr-->
-                                    <tr class="">
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/users/avatar-4.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">Teresa Himes  </h6>
-                                                    <a href="#" class="font-12 text-muted text-decoration-underline">#3269</a>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-primary ps-2 align-self-center text-end">$1845.00</span></td>
-                                    </tr><!--end tr-->
-                                    <tr>
-                                        <td class="px-0">
-                                            <div class="d-flex align-items-center">
-                                                <img src="{{asset('public/assets/images/users/avatar-5.jpg')}}" height="36" class="me-2 align-self-center rounded" alt="...">
-                                                <div class="flex-grow-1 text-truncate">
-                                                    <h6 class="m-0 text-truncate">Ralph Denton</h6>
-                                                    <a href="#" class="font-12 text-muted text-decoration-underline">#4521</a>
-                                                </div><!--end media body-->
-                                            </div><!--end media-->
-                                        </td>
-                                        <td  class="px-0 text-end"><span class="text-primary ps-2 align-self-center text-end">$1422.00</span></td>
-                                    </tr><!--end tr-->
-                                    </tbody>
-                                </table> <!--end table-->
-                            </div><!--end /div-->
-                        </div><!--end card-body-->
-                    </div><!--end card-->
-                </div> <!--end col-->
+            </div><!--end row-->
+            <div class="row justify-content-center">
+
+
             </div><!--end row-->
 
-        </div><!-- container -->
+            @script
+            <script>
+                document.addEventListener('livewire:initialized', () => {
+
+                var options1 = {
+                        series: [{ data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54] }],
+                        chart: { type: "line", width: 120, height: 35, sparkline: { enabled: !0 }, dropShadow: { enabled: !0, top: 4, left: 0, bottom: 0, right: 0, blur: 2, color: "rgba(132, 145, 183, 0.3)", opacity: 0.35 } },
+                        colors: ["#95a0c5"],
+                        stroke: { show: !0, curve: "smooth", width: [3], lineCap: "round" },
+                        tooltip: {
+                            fixed: { enabled: !1 },
+                            x: { show: !1 },
+                            y: {
+                                title: {
+                                    formatter: function (o) {
+                                        return "";
+                                    },
+                                },
+                            },
+                            marker: { show: !1 },
+                        },
+                    },
+                    chart1 = new ApexCharts(document.querySelector("#line-1"), options1),
+                    options2 =
+                        (
+                    chart2 = new ApexCharts(document.querySelector("#line-2"), options2),
+                    colors = (chart2.render(), ["#95a0c5", "#95a0c5", "#95a0c5", "#22c55e", "#95a0c5", "#95a0c5", "#95a0c5", "#95a0c5", "#95a0c5", "#95a0c5", "#95a0c5", "#95a0c5"]),
+                    options = {
+                        chart: { height: 270, type: "bar", toolbar: { show: !1 }, dropShadow: { enabled: !0, top: 0, left: 5, bottom: 5, right: 0, blur: 5, color: "#45404a2e", opacity: 0.35 } },
+                        colors: colors,
+                        plotOptions: { bar: { borderRadius: 6, dataLabels: { position: "top" }, columnWidth: "20", distributed: !0 } },
+                        dataLabels: {
+                            enabled: !0,
+                            formatter: function (o) {
+                                return o + "%";
+                            },
+                            offsetY: -20,
+                            style: { fontSize: "12px", colors: ["#8997bd"] },
+                        },
+                        series: [{ name: "Inflation", data: [2.3, 3.1, 4, 10.1, 4, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2] }],
+                        xaxis: {
+                            categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+                            position: "top",
+                            axisBorder: { show: !1 },
+                            axisTicks: { show: !1 },
+                            crosshairs: { fill: { type: "gradient", gradient: { colorFrom: "#D8E3F0", colorTo: "#BED1E6", stops: [0, 100], opacityFrom: 0.4, opacityTo: 0.5 } } },
+                            tooltip: { enabled: !0 },
+                        },
+                        yaxis: {
+                            axisBorder: { show: !1 },
+                            axisTicks: { show: !1 },
+                            labels: {
+                                show: !0,
+                                formatter: function (o) {
+                                    return "$" + o + "k";
+                                },
+                            },
+                        },
+                        grid: { row: { colors: ["transparent", "transparent"], opacity: 0.2 }, strokeDashArray: 2.5 },
+                        legend: { show: !1 },
+                    },
+                    chart = new ApexCharts(document.querySelector("#monthly_income"), options),
+                    options =
+                        (chart.render(),
+                            {
+                                series: [{ name: "Items", data: [1380, 1100, 990, 880, 740, 548, 330, 200] }],
+                                chart: { type: "bar", height: 275, toolbar: { show: !1 } },
+                                plotOptions: { bar: { borderRadius: 6, horizontal: !0, distributed: !0, barHeight: "85%", isFunnel: !0, isFunnel3d: !1 } },
+                                dataLabels: {
+                                    enabled: !0,
+                                    formatter: function (o, e) {
+                                        return e.w.globals.labels[e.dataPointIndex];
+                                    },
+                                    dropShadow: { enabled: !1 },
+                                    style: { colors: ["#22c55e"], fontWeight: 400, fontSize: "13px" },
+                                },
+                                xaxis: { categories: ["Mobile", "Men Fishion", "Women Fishion", "Beauty", "Health", "Sports", "Kids", "Music"] },
+                                colors: ["rgba(34, 197, 94, 0.45)", "rgba(34, 197, 94, 0.4)", "rgba(34, 197, 94, 0.35)", "rgba(34, 197, 94, 0.3)", "rgba(34, 197, 94, 0.25)", "rgba(34, 197, 94, 0.2)", "rgba(34, 197, 94, 0.15)", "rgba(34, 197, 94, 0.1)"],
+                                legend: { show: !1 },
+                            }),
+                    options =
+                        ((chart = new ApexCharts(document.querySelector("#categories"), options)).render(),
+                            {
+                                chart: { height: 280, type: "donut" },
+                                plotOptions: { pie: { donut: { size: "80%" } } },
+                                dataLabels: { enabled: !1 },
+                                stroke: { show: !0, width: 2, colors: ["transparent"] },
+                                series: [50, 10, 40],
+                                legend: { show: !0, position: "bottom", horizontalAlign: "center", verticalAlign: "middle", floating: !1, fontSize: "13px", fontFamily: "Be Vietnam Pro, sans-serif", offsetX: 0, offsetY: 0 },
+                                labels: ["pending", "delivered", "cancelled"],
+                                colors: ["#22c55e", "#08b0e7", "#ffc728"],
+                                responsive: [{ breakpoint: 600, options: { plotOptions: { donut: { customScale: 0.2 } }, chart: { height: 240 }, legend: { show: !1 } } }],
+                                tooltip: {
+                                    y: {
+                                        formatter: function (o) {
+                                            return o + " %";
+                                        },
+                                    },
+                                },
+                            });
+                (chart = new ApexCharts(document.querySelector("#customers"), options)).render();
+                })
+
+            </script>
+            @endscript
+        </div>
 

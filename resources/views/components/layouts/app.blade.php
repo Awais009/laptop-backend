@@ -8,7 +8,6 @@
 
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{asset('public/assets/images/logo.png')}}">
-
         <!-- App css -->
         <link href="{{asset('public/assets/libs/simple-datatables/style.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('public/assets/libs/mobius1-selectr/selectr.min.css')}}" rel="stylesheet" type="text/css" />
@@ -18,6 +17,10 @@
     </head>
     <body data-sidebar-size="default">
     <!-- Top Bar Start -->
+
+    @if(auth()->check() && auth()->user()->role === 'admin')
+
+
     <div class="topbar d-print-none">
         <div class="container-xxl">
             <nav class="topbar-custom d-flex justify-content-between" id="topbar-custom">
@@ -32,13 +35,6 @@
 
                 </ul>
                 <ul class="topbar-item list-unstyled d-inline-flex align-items-center mb-0">
-                    <li class="hide-phone app-search">
-                        <form role="search" action="#" method="get">
-                            <input type="search" name="search" class="form-control top-search mb-0" placeholder="Search here...">
-                            <button type="submit"><i class="iconoir-search"></i></button>
-                        </form>
-                    </li>
-
 
                     <li class="topbar-item">
                         <a class="nav-link nav-icon" href="javascript:void(0);" id="light-dark-mode">
@@ -57,20 +53,13 @@
                                     <img src="{{asset('public/assets/images/users/avatar-1.jpg')}}" alt="" class="thumb-md rounded-circle">
                                 </div>
                                 <div class="flex-grow-1 ms-2 text-truncate align-self-center">
-                                    <h6 class="my-0 fw-medium text-dark fs-13">William Martin</h6>
-                                    <small class="text-muted mb-0">Front End Developer</small>
+                                    <h6 class="my-0 fw-medium text-dark fs-13">{{auth()->user()->name}}</h6>
+                                    <small class="text-muted mb-0">{{auth()->user()->email}}</small>
                                 </div><!--end media-body-->
                             </div>
-                            <div class="dropdown-divider mt-0"></div>
-                            <small class="text-muted px-2 pb-1 d-block">Account</small>
-                            <a class="dropdown-item" href="pages-profile.html"><i class="las la-user fs-18 me-1 align-text-bottom"></i> Profile</a>
-                            <a class="dropdown-item" href="pages-faq.html"><i class="las la-wallet fs-18 me-1 align-text-bottom"></i> Earning</a>
-                            <small class="text-muted px-2 py-1 d-block">Settings</small>
-                            <a class="dropdown-item" href="pages-profile.html"><i class="las la-cog fs-18 me-1 align-text-bottom"></i>Account Settings</a>
-                            <a class="dropdown-item" href="pages-profile.html"><i class="las la-lock fs-18 me-1 align-text-bottom"></i> Security</a>
-                            <a class="dropdown-item" href="pages-faq.html"><i class="las la-question-circle fs-18 me-1 align-text-bottom"></i> Help Center</a>
+
                             <div class="dropdown-divider mb-0"></div>
-                            <a class="dropdown-item text-danger" href="auth-login.html"><i class="las la-power-off fs-18 me-1 align-text-bottom"></i> Logout</a>
+                            <a class="dropdown-item text-danger" href="{{route('logout')}}"><i class="las la-power-off fs-18 me-1 align-text-bottom"></i> Logout</a>
                         </div>
                     </li>
                 </ul><!--end topbar-nav-->
@@ -171,6 +160,9 @@
     </div><!--end startbar-->
     <div class="startbar-overlay d-print-none"></div>
     <!-- end leftbar-tab-menu-->
+
+    @endif
+
     <div class="page-wrapper">
 
         <!-- Page Content-->
@@ -256,6 +248,7 @@
 
     <script src="{{asset('public/assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('public/assets/libs/simplebar/simplebar.min.js')}}"></script>
+    <script src="{{asset('public/assets/libs/apexcharts/apexcharts.min.js')}}"></script>
 
     <script src="{{asset('public/assets/libs/mobius1-selectr/selectr.min.js')}}"></script>
     <script src="{{asset('public/assets/libs/simple-datatables/umd/simple-datatables.js')}}"></script>
