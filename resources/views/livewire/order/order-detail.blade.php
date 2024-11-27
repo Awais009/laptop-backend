@@ -71,7 +71,7 @@
                             <h4 class="card-title">Order - {{$order?->status}}</h4>
                         </div><!--end col-->
                         <div class="col-auto">
-                            <a href="#" class="text-secondary"><i class="fas fa-download me-1"></i> Download Invoice</a>
+                            <a href="{{route('invoice',$order?->id)}}" class="text-secondary"><i class="fas fa-download me-1"></i> Download Invoice</a>
                         </div><!--end col-->
                     </div>  <!--end row-->
                 </div><!--end card-header-->

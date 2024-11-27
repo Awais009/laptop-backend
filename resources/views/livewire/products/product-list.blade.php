@@ -10,58 +10,6 @@
                         <div class="col-auto">
                             <form class="row g-2">
                                 <div class="col-auto">
-                                    <a class="btn bg-primary-subtle text-primary dropdown-toggle d-flex align-items-center arrow-none" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false" data-bs-auto-close="outside">
-                                        <i class="iconoir-filter-alt me-1"></i> Filter
-                                    </a>
-                                    <div class="dropdown-menu dropdown-menu-start">
-                                        <div class="p-2">
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input" checked id="filter-all">
-                                                <label class="form-check-label" for="filter-all">
-                                                    All
-                                                </label>
-                                            </div>
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input" checked id="filter-one">
-                                                <label class="form-check-label" for="filter-one">
-                                                    Fashion
-                                                </label>
-                                            </div>
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input" checked id="filter-two">
-                                                <label class="form-check-label" for="filter-two">
-                                                    Plants
-                                                </label>
-                                            </div>
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input" checked id="filter-three">
-                                                <label class="form-check-label" for="filter-three">
-                                                    Toys
-                                                </label>
-                                            </div>
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input" checked id="filter-four">
-                                                <label class="form-check-label" for="filter-four">
-                                                    Gadgets
-                                                </label>
-                                            </div>
-                                            <div class="form-check mb-2">
-                                                <input type="checkbox" class="form-check-input" checked id="filter-five">
-                                                <label class="form-check-label" for="filter-five">
-                                                    Food
-                                                </label>
-                                            </div>
-                                            <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" checked id="filter-six">
-                                                <label class="form-check-label" for="filter-six">
-                                                    Drinks
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div><!--end col-->
-
-                                <div class="col-auto">
                                     <a type="button" class="btn btn-primary" href="{{route('product.add')}}" ><i class="fa-solid fa-plus me-1"></i> Add Product</a>
                                 </div><!--end col-->
                             </form>
@@ -90,7 +38,7 @@
                             </thead>
                             <tbody>
                             @forelse($products as $product)
-                                <tr>
+                                <tr wire:key="{{$product->id}}">
                                     <td style="width: 16px;">
                                         <div class="form-check">
                                             <input type="checkbox" class="form-check-input" name="check"  id="customCheck1">
@@ -99,7 +47,7 @@
                                     <td class="ps-0">
                                         <img src="{{asset('storage/app/'.$product->image->path)}}" alt="" height="40">
                                         <p class="d-inline-block align-middle mb-0">
-                                            <a href="ecommerce-order-details.html" class="d-inline-block align-middle mb-0 product-name">{{$product->title}}</a>
+                                            <a href="#" class="d-inline-block align-middle mb-0 product-name">{{$product->title}}</a>
                                             <br>
                                             <span class="text-muted font-13">{{$product->SKU}}</span>
                                         </p>
@@ -140,4 +88,14 @@
             </div>
         </div> <!-- end col -->
     </div> <!-- end row -->
+    @script
+    <script>
+    Livewire.on('rendered',()=>{
+        try {
+            new simpleDatatables.DataTable("#datatable_1", { searchable: !0, fixedHeight: !1 });
+        } catch (e) {}
+    })
+
+    </script>
+    @endscript
 </div>

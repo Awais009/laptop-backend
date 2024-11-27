@@ -19,4 +19,9 @@ class ProductList extends Component
             'products' => $products
         ]);
     }
+
+    public function rendered()
+    {
+        $this->dispatch('rendered');
+    }
 }
