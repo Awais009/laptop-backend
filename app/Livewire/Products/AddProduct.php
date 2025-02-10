@@ -60,7 +60,7 @@ class AddProduct extends Component
         $validator = $this->validate( [
             'title' => 'required|string|max:191',
             'over_price' => 'required|integer',
-            'price' => 'required|integer',
+            'price' => 'required|integer|lt:over_price',
             'description' => 'required|string',
             'qty' => 'required|integer',
             'navigation_id' => 'required|exists:navigations,id',
