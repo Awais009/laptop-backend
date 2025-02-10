@@ -31,6 +31,7 @@
                                 <th>Category</th>
                                 <th>Pics</th>
                                 <th>Price</th>
+                                <th>Discounted Pics</th>
                                 <th>Status</th>
                                 <th>Created At</th>
                                 <th class="text-end">Action</th>
@@ -45,7 +46,7 @@
                                         </div>
                                     </td>
                                     <td class="ps-0">
-                                        <img src="{{asset('storage/app/'.$product->image->path)}}" alt="" height="40">
+                                        <img src="{{asset('storage/app/'.$product?->image?->path)}}" alt="" height="40">
                                         <p class="d-inline-block align-middle mb-0">
                                             <a href="#" class="d-inline-block align-middle mb-0 product-name">{{$product->title}}</a>
                                             <br>
@@ -54,6 +55,7 @@
                                     </td>
                                     <td>{{$product->navigation_item->title}}</td>
                                     <td>{{$product->images->count()}}</td>
+                                    <td>${{$product->over_price}}</td>
                                     <td>${{$product->price}}</td>
                                     <td>
                                         @if($product->status)
@@ -67,7 +69,7 @@
                                         <span>{{$product->created_at?->format('F-d-Y')}}</span>
                                     </td>
                                     <td class="text-end">
-                                        <a href="#"><i class="las la-pen text-secondary fs-18"></i></a>
+                                        <a href="{{route('product.add',$product->id)}}"><i class="las la-pen text-secondary fs-18"></i></a>
                                         <a href="#" wire:click.prevent="remove({{$product->id}})"><i class="las la-trash-alt text-secondary fs-18"></i></a>
                                     </td>
                                 </tr>

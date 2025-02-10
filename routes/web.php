@@ -19,7 +19,7 @@ Route::get('/logout', [AdminAuthController::class,'logout'])->name('logout');
 Route::group(['middleware' => 'role:admin'], function () {
     Route::get('/', Dashboard::class)->name('home');
     Route::get('/product-list', ProductList::class)->name('product.list');
-    Route::get('/add-product', AddProduct::class)->name('product.add');
+    Route::get('/add-product/{id?}', AddProduct::class)->name('product.add');
     Route::get('/order-list', OrderList::class)->name('order.list');
     Route::get('/order-detail/{id}', OrderDetail::class)->name('order.detail');
     Route::get('/navigation', Navigations::class)->name('navigation');
